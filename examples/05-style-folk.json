@@ -1,0 +1,1269 @@
+{
+  "project": {
+    "schemaVersion": 1,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "id": "style-folk",
+    "title": "午后 · 治愈民谣",
+    "bpm": 88,
+    "key": "G major",
+    "bars": 8,
+    "tracks": [
+      {
+        "id": "flute",
+        "name": "长笛 · 旋律",
+        "instrumentId": "flute",
+        "color": "#56928B",
+        "volume": 0.6,
+        "pan": 0.15,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.3,
+        "humanize": 0.3,
+        "notes": [
+          {
+            "id": "flute-001",
+            "start": 1,
+            "duration": 1,
+            "midi": 74,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-002",
+            "start": 2,
+            "duration": 0.5,
+            "midi": 71,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-003",
+            "start": 2.5,
+            "duration": 0.5,
+            "midi": 74,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-004",
+            "start": 3,
+            "duration": 1,
+            "midi": 79,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-005",
+            "start": 4,
+            "duration": 1.5,
+            "midi": 78,
+            "velocity": 0.55,
+            "articulation": "sustain"
+          },
+          {
+            "id": "flute-006",
+            "start": 5.5,
+            "duration": 0.5,
+            "midi": 76,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-007",
+            "start": 6,
+            "duration": 2,
+            "midi": 74,
+            "velocity": 0.55,
+            "articulation": "sustain"
+          },
+          {
+            "id": "flute-008",
+            "start": 8,
+            "duration": 1,
+            "midi": 71,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-009",
+            "start": 9,
+            "duration": 1,
+            "midi": 74,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-010",
+            "start": 10,
+            "duration": 1,
+            "midi": 76,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-011",
+            "start": 11,
+            "duration": 1,
+            "midi": 78,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-012",
+            "start": 12,
+            "duration": 2,
+            "midi": 76,
+            "velocity": 0.55,
+            "articulation": "sustain"
+          },
+          {
+            "id": "flute-013",
+            "start": 14,
+            "duration": 1,
+            "midi": 72,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-014",
+            "start": 15,
+            "duration": 1,
+            "midi": 74,
+            "velocity": 0.55,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-015",
+            "start": 16,
+            "duration": 1.5,
+            "midi": 79,
+            "velocity": 0.62,
+            "articulation": "sustain"
+          },
+          {
+            "id": "flute-016",
+            "start": 17.5,
+            "duration": 0.5,
+            "midi": 78,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-017",
+            "start": 18,
+            "duration": 1,
+            "midi": 76,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-018",
+            "start": 19,
+            "duration": 1,
+            "midi": 74,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-019",
+            "start": 20,
+            "duration": 1.5,
+            "midi": 78,
+            "velocity": 0.62,
+            "articulation": "sustain"
+          },
+          {
+            "id": "flute-020",
+            "start": 21.5,
+            "duration": 0.5,
+            "midi": 76,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-021",
+            "start": 22,
+            "duration": 2,
+            "midi": 74,
+            "velocity": 0.62,
+            "articulation": "sustain"
+          },
+          {
+            "id": "flute-022",
+            "start": 24,
+            "duration": 1,
+            "midi": 72,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-023",
+            "start": 25,
+            "duration": 1,
+            "midi": 76,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-024",
+            "start": 26,
+            "duration": 1,
+            "midi": 79,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-025",
+            "start": 27,
+            "duration": 1,
+            "midi": 76,
+            "velocity": 0.62,
+            "articulation": "sustain-nv"
+          },
+          {
+            "id": "flute-026",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 74,
+            "velocity": 0.62,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "guitar",
+        "name": "原声吉他 · 指弹",
+        "instrumentId": "guitar",
+        "color": "#A36A3A",
+        "volume": 1,
+        "pan": -0.15,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.2,
+        "release": 0.5,
+        "humanize": 0.35,
+        "notes": [
+          {
+            "id": "guitar-001",
+            "start": 0,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-002",
+            "start": 0.5,
+            "duration": 0.75,
+            "midi": 59,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-003",
+            "start": 1,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-004",
+            "start": 1.5,
+            "duration": 0.75,
+            "midi": 62,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-005",
+            "start": 2,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-006",
+            "start": 2.5,
+            "duration": 0.75,
+            "midi": 59,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-007",
+            "start": 3,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-008",
+            "start": 3.5,
+            "duration": 0.75,
+            "midi": 55,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-009",
+            "start": 4,
+            "duration": 1,
+            "midi": 42,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-010",
+            "start": 4.5,
+            "duration": 0.75,
+            "midi": 62,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-011",
+            "start": 5,
+            "duration": 1,
+            "midi": 45,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-012",
+            "start": 5.5,
+            "duration": 0.75,
+            "midi": 66,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-013",
+            "start": 6,
+            "duration": 1,
+            "midi": 42,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-014",
+            "start": 6.5,
+            "duration": 0.75,
+            "midi": 62,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-015",
+            "start": 7,
+            "duration": 1,
+            "midi": 45,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-016",
+            "start": 7.5,
+            "duration": 0.75,
+            "midi": 57,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-017",
+            "start": 8,
+            "duration": 1,
+            "midi": 40,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-018",
+            "start": 8.5,
+            "duration": 0.75,
+            "midi": 59,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-019",
+            "start": 9,
+            "duration": 1,
+            "midi": 47,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-020",
+            "start": 9.5,
+            "duration": 0.75,
+            "midi": 64,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-021",
+            "start": 10,
+            "duration": 1,
+            "midi": 40,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-022",
+            "start": 10.5,
+            "duration": 0.75,
+            "midi": 59,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-023",
+            "start": 11,
+            "duration": 1,
+            "midi": 47,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-024",
+            "start": 11.5,
+            "duration": 0.75,
+            "midi": 55,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-025",
+            "start": 12,
+            "duration": 1,
+            "midi": 48,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-026",
+            "start": 12.5,
+            "duration": 0.75,
+            "midi": 60,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-027",
+            "start": 13,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-028",
+            "start": 13.5,
+            "duration": 0.75,
+            "midi": 64,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-029",
+            "start": 14,
+            "duration": 1,
+            "midi": 48,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-030",
+            "start": 14.5,
+            "duration": 0.75,
+            "midi": 60,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-031",
+            "start": 15,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-032",
+            "start": 15.5,
+            "duration": 0.75,
+            "midi": 55,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-033",
+            "start": 16,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-034",
+            "start": 16.5,
+            "duration": 0.75,
+            "midi": 59,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-035",
+            "start": 17,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-036",
+            "start": 17.5,
+            "duration": 0.75,
+            "midi": 62,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-037",
+            "start": 18,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-038",
+            "start": 18.5,
+            "duration": 0.75,
+            "midi": 59,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-039",
+            "start": 19,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-040",
+            "start": 19.5,
+            "duration": 0.75,
+            "midi": 55,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-041",
+            "start": 20,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-042",
+            "start": 20.5,
+            "duration": 0.75,
+            "midi": 62,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-043",
+            "start": 21,
+            "duration": 1,
+            "midi": 45,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-044",
+            "start": 21.5,
+            "duration": 0.75,
+            "midi": 66,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-045",
+            "start": 22,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-046",
+            "start": 22.5,
+            "duration": 0.75,
+            "midi": 62,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-047",
+            "start": 23,
+            "duration": 1,
+            "midi": 45,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-048",
+            "start": 23.5,
+            "duration": 0.75,
+            "midi": 57,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-049",
+            "start": 24,
+            "duration": 1,
+            "midi": 48,
+            "velocity": 0.85
+          },
+          {
+            "id": "guitar-050",
+            "start": 24.5,
+            "duration": 0.75,
+            "midi": 60,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-051",
+            "start": 25,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-052",
+            "start": 25.5,
+            "duration": 0.75,
+            "midi": 64,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-053",
+            "start": 26,
+            "duration": 1,
+            "midi": 48,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-054",
+            "start": 26.5,
+            "duration": 0.75,
+            "midi": 60,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-055",
+            "start": 27,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.75
+          },
+          {
+            "id": "guitar-056",
+            "start": 27.5,
+            "duration": 0.75,
+            "midi": 55,
+            "velocity": 0.65
+          },
+          {
+            "id": "guitar-057",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 43,
+            "velocity": 0.6
+          },
+          {
+            "id": "guitar-058",
+            "start": 28.06,
+            "duration": 3.8,
+            "midi": 50,
+            "velocity": 0.57
+          },
+          {
+            "id": "guitar-059",
+            "start": 28.12,
+            "duration": 3.8,
+            "midi": 55,
+            "velocity": 0.54
+          },
+          {
+            "id": "guitar-060",
+            "start": 28.18,
+            "duration": 3.8,
+            "midi": 59,
+            "velocity": 0.51
+          },
+          {
+            "id": "guitar-061",
+            "start": 28.24,
+            "duration": 3.76,
+            "midi": 62,
+            "velocity": 0.48
+          }
+        ]
+      },
+      {
+        "id": "piano",
+        "name": "钢琴 · 点缀",
+        "instrumentId": "piano",
+        "color": "#002FA7",
+        "volume": 1,
+        "pan": 0.25,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.3,
+        "humanize": 0.3,
+        "notes": [
+          {
+            "id": "piano-001",
+            "start": 16,
+            "duration": 1.5,
+            "midi": 67,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-002",
+            "start": 16,
+            "duration": 1.5,
+            "midi": 71,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-003",
+            "start": 16,
+            "duration": 1.5,
+            "midi": 74,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-004",
+            "start": 18.5,
+            "duration": 1.5,
+            "midi": 67,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-005",
+            "start": 18.5,
+            "duration": 1.5,
+            "midi": 71,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-006",
+            "start": 18.5,
+            "duration": 1.5,
+            "midi": 74,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-007",
+            "start": 20,
+            "duration": 1.5,
+            "midi": 69,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-008",
+            "start": 20,
+            "duration": 1.5,
+            "midi": 74,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-009",
+            "start": 20,
+            "duration": 1.5,
+            "midi": 78,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-010",
+            "start": 22.5,
+            "duration": 1.5,
+            "midi": 69,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-011",
+            "start": 22.5,
+            "duration": 1.5,
+            "midi": 74,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-012",
+            "start": 22.5,
+            "duration": 1.5,
+            "midi": 78,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-013",
+            "start": 24,
+            "duration": 1.5,
+            "midi": 67,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-014",
+            "start": 24,
+            "duration": 1.5,
+            "midi": 72,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-015",
+            "start": 24,
+            "duration": 1.5,
+            "midi": 76,
+            "velocity": 0.38
+          },
+          {
+            "id": "piano-016",
+            "start": 26.5,
+            "duration": 1.5,
+            "midi": 67,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-017",
+            "start": 26.5,
+            "duration": 1.5,
+            "midi": 72,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-018",
+            "start": 26.5,
+            "duration": 1.5,
+            "midi": 76,
+            "velocity": 0.32
+          },
+          {
+            "id": "piano-019",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 67,
+            "velocity": 0.4
+          },
+          {
+            "id": "piano-020",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 71,
+            "velocity": 0.4
+          },
+          {
+            "id": "piano-021",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 74,
+            "velocity": 0.4
+          }
+        ]
+      },
+      {
+        "id": "pad",
+        "name": "弦乐 · 铺底",
+        "instrumentId": "strings",
+        "color": "#7C5BA6",
+        "volume": 0.3,
+        "pan": -0.25,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.4,
+        "release": 0.8,
+        "notes": [
+          {
+            "id": "pad-001",
+            "start": 16,
+            "duration": 4,
+            "midi": 67,
+            "velocity": 0.32,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-002",
+            "start": 16,
+            "duration": 4,
+            "midi": 71,
+            "velocity": 0.28,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-003",
+            "start": 20,
+            "duration": 4,
+            "midi": 69,
+            "velocity": 0.32,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-004",
+            "start": 20,
+            "duration": 4,
+            "midi": 74,
+            "velocity": 0.28,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-005",
+            "start": 24,
+            "duration": 4,
+            "midi": 67,
+            "velocity": 0.32,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-006",
+            "start": 24,
+            "duration": 4,
+            "midi": 72,
+            "velocity": 0.28,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-007",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 67,
+            "velocity": 0.32,
+            "articulation": "sustain"
+          },
+          {
+            "id": "pad-008",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 71,
+            "velocity": 0.28,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "shaker",
+        "name": "沙锤",
+        "instrumentId": "shaker",
+        "color": "#95916D",
+        "volume": 1,
+        "pan": 0.35,
+        "muted": false,
+        "solo": false,
+        "humanize": 0.4,
+        "notes": [
+          {
+            "id": "shaker-001",
+            "start": 16,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-002",
+            "start": 16.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-003",
+            "start": 16.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-004",
+            "start": 16.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-005",
+            "start": 17,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-006",
+            "start": 17.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-007",
+            "start": 17.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-008",
+            "start": 17.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-009",
+            "start": 18,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-010",
+            "start": 18.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-011",
+            "start": 18.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-012",
+            "start": 18.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-013",
+            "start": 19,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-014",
+            "start": 19.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-015",
+            "start": 19.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-016",
+            "start": 19.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-017",
+            "start": 20,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-018",
+            "start": 20.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-019",
+            "start": 20.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-020",
+            "start": 20.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-021",
+            "start": 21,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-022",
+            "start": 21.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-023",
+            "start": 21.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-024",
+            "start": 21.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-025",
+            "start": 22,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-026",
+            "start": 22.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-027",
+            "start": 22.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-028",
+            "start": 22.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-029",
+            "start": 23,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-030",
+            "start": 23.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-031",
+            "start": 23.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-032",
+            "start": 23.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-033",
+            "start": 24,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-034",
+            "start": 24.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-035",
+            "start": 24.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-036",
+            "start": 24.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-037",
+            "start": 25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-038",
+            "start": 25.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-039",
+            "start": 25.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-040",
+            "start": 25.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-041",
+            "start": 26,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-042",
+            "start": 26.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-043",
+            "start": 26.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-044",
+            "start": 26.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-045",
+            "start": 27,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.55
+          },
+          {
+            "id": "shaker-046",
+            "start": 27.25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          },
+          {
+            "id": "shaker-047",
+            "start": 27.5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.7
+          },
+          {
+            "id": "shaker-048",
+            "start": 27.75,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-10-06T17:10:28.613Z"
+  }
+}

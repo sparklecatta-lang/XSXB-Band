@@ -1,0 +1,1793 @@
+{
+  "project": {
+    "schemaVersion": 1,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "id": "style-cinematic",
+    "title": "破晓 · 电影配乐",
+    "bpm": 96,
+    "key": "D major",
+    "bars": 8,
+    "tracks": [
+      {
+        "id": "horns",
+        "name": "圆号 · 主题",
+        "instrumentId": "french-horn",
+        "color": "#B8862E",
+        "volume": 0.4,
+        "pan": -0.2,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.4,
+        "notes": [
+          {
+            "id": "horns-001",
+            "start": 0,
+            "duration": 1.5,
+            "midi": 62,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-002",
+            "start": 1.5,
+            "duration": 0.5,
+            "midi": 66,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-003",
+            "start": 2,
+            "duration": 2,
+            "midi": 69,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-004",
+            "start": 4,
+            "duration": 1.5,
+            "midi": 71,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-005",
+            "start": 5.5,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-006",
+            "start": 6,
+            "duration": 2,
+            "midi": 66,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-007",
+            "start": 8,
+            "duration": 1.5,
+            "midi": 67,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-008",
+            "start": 9.5,
+            "duration": 0.5,
+            "midi": 71,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-009",
+            "start": 10,
+            "duration": 1,
+            "midi": 74,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-010",
+            "start": 11,
+            "duration": 1,
+            "midi": 71,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-011",
+            "start": 12,
+            "duration": 3,
+            "midi": 69,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-012",
+            "start": 15,
+            "duration": 1,
+            "midi": 64,
+            "velocity": 0.7,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-013",
+            "start": 16,
+            "duration": 1.5,
+            "midi": 62,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-014",
+            "start": 17.5,
+            "duration": 0.5,
+            "midi": 66,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-015",
+            "start": 18,
+            "duration": 2,
+            "midi": 69,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-016",
+            "start": 20,
+            "duration": 1.5,
+            "midi": 67,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-017",
+            "start": 21.5,
+            "duration": 0.5,
+            "midi": 71,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-018",
+            "start": 22,
+            "duration": 2,
+            "midi": 67,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-019",
+            "start": 24,
+            "duration": 1.5,
+            "midi": 64,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-020",
+            "start": 25.5,
+            "duration": 0.5,
+            "midi": 61,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-021",
+            "start": 26,
+            "duration": 2,
+            "midi": 64,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          },
+          {
+            "id": "horns-022",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 62,
+            "velocity": 0.75,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "trumpets",
+        "name": "小号 · 高八度主题",
+        "instrumentId": "trumpet",
+        "color": "#C99A2E",
+        "volume": 0.4,
+        "pan": 0.2,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.38,
+        "notes": [
+          {
+            "id": "trumpets-001",
+            "start": 16,
+            "duration": 1.5,
+            "midi": 74,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-002",
+            "start": 17.5,
+            "duration": 0.5,
+            "midi": 78,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-003",
+            "start": 18,
+            "duration": 2,
+            "midi": 81,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-004",
+            "start": 20,
+            "duration": 1.5,
+            "midi": 79,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-005",
+            "start": 21.5,
+            "duration": 0.5,
+            "midi": 83,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-006",
+            "start": 22,
+            "duration": 2,
+            "midi": 79,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-007",
+            "start": 24,
+            "duration": 1.5,
+            "midi": 76,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-008",
+            "start": 25.5,
+            "duration": 0.5,
+            "midi": 73,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-009",
+            "start": 26,
+            "duration": 2,
+            "midi": 76,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trumpets-010",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 74,
+            "velocity": 0.82,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "trombones",
+        "name": "长号 · 和声",
+        "instrumentId": "trombone",
+        "color": "#9E7A2A",
+        "volume": 0.18,
+        "pan": 0.1,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.4,
+        "notes": [
+          {
+            "id": "trombones-001",
+            "start": 16,
+            "duration": 3.9,
+            "midi": 38,
+            "velocity": 0.65,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-002",
+            "start": 16,
+            "duration": 3.9,
+            "midi": 45,
+            "velocity": 0.65,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-003",
+            "start": 20,
+            "duration": 3.9,
+            "midi": 43,
+            "velocity": 0.65,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-004",
+            "start": 20,
+            "duration": 3.9,
+            "midi": 50,
+            "velocity": 0.65,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-005",
+            "start": 24,
+            "duration": 3.9,
+            "midi": 45,
+            "velocity": 0.65,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-006",
+            "start": 24,
+            "duration": 3.9,
+            "midi": 52,
+            "velocity": 0.65,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-007",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 38,
+            "velocity": 0.8,
+            "articulation": "sustain"
+          },
+          {
+            "id": "trombones-008",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 45,
+            "velocity": 0.8,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "violins",
+        "name": "小提琴组 · 跳弓",
+        "instrumentId": "strings",
+        "color": "#7C5BA6",
+        "volume": 0.26,
+        "pan": 0.3,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.35,
+        "notes": [
+          {
+            "id": "violins-001",
+            "start": 0,
+            "duration": 0.25,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-002",
+            "start": 0.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-003",
+            "start": 1,
+            "duration": 0.25,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-004",
+            "start": 1.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-005",
+            "start": 2,
+            "duration": 0.25,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-006",
+            "start": 2.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-007",
+            "start": 3,
+            "duration": 0.25,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-008",
+            "start": 3.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-009",
+            "start": 4,
+            "duration": 0.25,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-010",
+            "start": 4.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-011",
+            "start": 5,
+            "duration": 0.25,
+            "midi": 71,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-012",
+            "start": 5.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-013",
+            "start": 6,
+            "duration": 0.25,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-014",
+            "start": 6.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-015",
+            "start": 7,
+            "duration": 0.25,
+            "midi": 71,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-016",
+            "start": 7.5,
+            "duration": 0.25,
+            "midi": 66,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-017",
+            "start": 8,
+            "duration": 0.25,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-018",
+            "start": 8.5,
+            "duration": 0.25,
+            "midi": 67,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-019",
+            "start": 9,
+            "duration": 0.25,
+            "midi": 71,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-020",
+            "start": 9.5,
+            "duration": 0.25,
+            "midi": 67,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-021",
+            "start": 10,
+            "duration": 0.25,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-022",
+            "start": 10.5,
+            "duration": 0.25,
+            "midi": 67,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-023",
+            "start": 11,
+            "duration": 0.25,
+            "midi": 71,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-024",
+            "start": 11.5,
+            "duration": 0.25,
+            "midi": 67,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-025",
+            "start": 12,
+            "duration": 0.25,
+            "midi": 61,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-026",
+            "start": 12.5,
+            "duration": 0.25,
+            "midi": 64,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-027",
+            "start": 13,
+            "duration": 0.25,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-028",
+            "start": 13.5,
+            "duration": 0.25,
+            "midi": 64,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-029",
+            "start": 14,
+            "duration": 0.25,
+            "midi": 61,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-030",
+            "start": 14.5,
+            "duration": 0.25,
+            "midi": 64,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-031",
+            "start": 15,
+            "duration": 0.25,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-032",
+            "start": 15.5,
+            "duration": 0.25,
+            "midi": 64,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-033",
+            "start": 16,
+            "duration": 0.25,
+            "midi": 74,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-034",
+            "start": 16.5,
+            "duration": 0.25,
+            "midi": 78,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-035",
+            "start": 17,
+            "duration": 0.25,
+            "midi": 81,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-036",
+            "start": 17.5,
+            "duration": 0.25,
+            "midi": 78,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-037",
+            "start": 18,
+            "duration": 0.25,
+            "midi": 74,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-038",
+            "start": 18.5,
+            "duration": 0.25,
+            "midi": 78,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-039",
+            "start": 19,
+            "duration": 0.25,
+            "midi": 81,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-040",
+            "start": 19.5,
+            "duration": 0.25,
+            "midi": 78,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-041",
+            "start": 20,
+            "duration": 0.25,
+            "midi": 74,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-042",
+            "start": 20.5,
+            "duration": 0.25,
+            "midi": 79,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-043",
+            "start": 21,
+            "duration": 0.25,
+            "midi": 83,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-044",
+            "start": 21.5,
+            "duration": 0.25,
+            "midi": 79,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-045",
+            "start": 22,
+            "duration": 0.25,
+            "midi": 74,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-046",
+            "start": 22.5,
+            "duration": 0.25,
+            "midi": 79,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-047",
+            "start": 23,
+            "duration": 0.25,
+            "midi": 83,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-048",
+            "start": 23.5,
+            "duration": 0.25,
+            "midi": 79,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-049",
+            "start": 24,
+            "duration": 0.25,
+            "midi": 73,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-050",
+            "start": 24.5,
+            "duration": 0.25,
+            "midi": 76,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-051",
+            "start": 25,
+            "duration": 0.25,
+            "midi": 81,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-052",
+            "start": 25.5,
+            "duration": 0.25,
+            "midi": 76,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-053",
+            "start": 26,
+            "duration": 0.25,
+            "midi": 73,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-054",
+            "start": 26.5,
+            "duration": 0.25,
+            "midi": 76,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-055",
+            "start": 27,
+            "duration": 0.25,
+            "midi": 81,
+            "velocity": 0.82,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-056",
+            "start": 27.5,
+            "duration": 0.25,
+            "midi": 76,
+            "velocity": 0.65,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "violins-057",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 74,
+            "velocity": 0.8,
+            "articulation": "sustain"
+          },
+          {
+            "id": "violins-058",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 78,
+            "velocity": 0.8,
+            "articulation": "sustain"
+          },
+          {
+            "id": "violins-059",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 81,
+            "velocity": 0.8,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "cellos",
+        "name": "大提琴组 · 低音",
+        "instrumentId": "cello-section",
+        "color": "#6B4C8A",
+        "volume": 0.35,
+        "pan": -0.3,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.35,
+        "notes": [
+          {
+            "id": "cellos-001",
+            "start": 0,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-002",
+            "start": 0.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-003",
+            "start": 1,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-004",
+            "start": 1.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-005",
+            "start": 2,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-006",
+            "start": 2.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-007",
+            "start": 3,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-008",
+            "start": 3.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-009",
+            "start": 4,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-010",
+            "start": 4.5,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-011",
+            "start": 5,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-012",
+            "start": 5.5,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-013",
+            "start": 6,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-014",
+            "start": 6.5,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-015",
+            "start": 7,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-016",
+            "start": 7.5,
+            "duration": 0.25,
+            "midi": 47,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-017",
+            "start": 8,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-018",
+            "start": 8.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-019",
+            "start": 9,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-020",
+            "start": 9.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-021",
+            "start": 10,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-022",
+            "start": 10.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-023",
+            "start": 11,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-024",
+            "start": 11.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-025",
+            "start": 12,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-026",
+            "start": 12.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-027",
+            "start": 13,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-028",
+            "start": 13.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-029",
+            "start": 14,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-030",
+            "start": 14.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-031",
+            "start": 15,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-032",
+            "start": 15.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-033",
+            "start": 16,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-034",
+            "start": 16.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-035",
+            "start": 17,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-036",
+            "start": 17.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-037",
+            "start": 18,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-038",
+            "start": 18.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-039",
+            "start": 19,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-040",
+            "start": 19.5,
+            "duration": 0.25,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-041",
+            "start": 20,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-042",
+            "start": 20.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-043",
+            "start": 21,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-044",
+            "start": 21.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-045",
+            "start": 22,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-046",
+            "start": 22.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-047",
+            "start": 23,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-048",
+            "start": 23.5,
+            "duration": 0.25,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-049",
+            "start": 24,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-050",
+            "start": 24.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-051",
+            "start": 25,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-052",
+            "start": 25.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-053",
+            "start": 26,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-054",
+            "start": 26.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-055",
+            "start": 27,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.75,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-056",
+            "start": 27.5,
+            "duration": 0.25,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "spiccato"
+          },
+          {
+            "id": "cellos-057",
+            "start": 28,
+            "duration": 3.8,
+            "midi": 50,
+            "velocity": 0.85,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "harp",
+        "name": "竖琴 · 刮奏",
+        "instrumentId": "harp",
+        "color": "#8C6BB1",
+        "volume": 0.2,
+        "pan": 0.35,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.45,
+        "notes": [
+          {
+            "id": "harp-001",
+            "start": 15,
+            "duration": 1,
+            "midi": 57,
+            "velocity": 0.55,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-002",
+            "start": 15.125,
+            "duration": 1,
+            "midi": 61,
+            "velocity": 0.59,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-003",
+            "start": 15.25,
+            "duration": 1,
+            "midi": 64,
+            "velocity": 0.63,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-004",
+            "start": 15.375,
+            "duration": 1,
+            "midi": 69,
+            "velocity": 0.67,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-005",
+            "start": 15.5,
+            "duration": 1,
+            "midi": 73,
+            "velocity": 0.71,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-006",
+            "start": 15.625,
+            "duration": 1,
+            "midi": 76,
+            "velocity": 0.75,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-007",
+            "start": 15.75,
+            "duration": 1,
+            "midi": 81,
+            "velocity": 0.79,
+            "articulation": "pluck"
+          },
+          {
+            "id": "harp-008",
+            "start": 15.875,
+            "duration": 1,
+            "midi": 85,
+            "velocity": 0.83,
+            "articulation": "pluck"
+          }
+        ]
+      },
+      {
+        "id": "timpani",
+        "name": "定音鼓",
+        "instrumentId": "timpani",
+        "color": "#5E4A3A",
+        "volume": 0.35,
+        "pan": 0,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.3,
+        "notes": [
+          {
+            "id": "timpani-001",
+            "start": 0,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.6,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-002",
+            "start": 4,
+            "duration": 1,
+            "midi": 47,
+            "velocity": 0.6,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-003",
+            "start": 8,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.6,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-004",
+            "start": 12,
+            "duration": 1,
+            "midi": 45,
+            "velocity": 0.6,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-005",
+            "start": 14,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.35,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-006",
+            "start": 14.125,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.381,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-007",
+            "start": 14.25,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.412,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-008",
+            "start": 14.375,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.444,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-009",
+            "start": 14.5,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.475,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-010",
+            "start": 14.625,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.506,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-011",
+            "start": 14.75,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.537,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-012",
+            "start": 14.875,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.569,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-013",
+            "start": 15,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.6,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-014",
+            "start": 15.125,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.631,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-015",
+            "start": 15.25,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.662,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-016",
+            "start": 15.375,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.694,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-017",
+            "start": 15.5,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.725,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-018",
+            "start": 15.625,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.756,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-019",
+            "start": 15.75,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.787,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-020",
+            "start": 15.875,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.819,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-021",
+            "start": 16,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.85,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-022",
+            "start": 18.5,
+            "duration": 0.5,
+            "midi": 50,
+            "velocity": 0.55,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-023",
+            "start": 20,
+            "duration": 1,
+            "midi": 43,
+            "velocity": 0.85,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-024",
+            "start": 22.5,
+            "duration": 0.5,
+            "midi": 43,
+            "velocity": 0.55,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-025",
+            "start": 24,
+            "duration": 1,
+            "midi": 45,
+            "velocity": 0.85,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-026",
+            "start": 26,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.35,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-027",
+            "start": 26.125,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.381,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-028",
+            "start": 26.25,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.412,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-029",
+            "start": 26.375,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.444,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-030",
+            "start": 26.5,
+            "duration": 0.5,
+            "midi": 45,
+            "velocity": 0.55,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-031",
+            "start": 26.5,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.475,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-032",
+            "start": 26.625,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.506,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-033",
+            "start": 26.75,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.537,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-034",
+            "start": 26.875,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.569,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-035",
+            "start": 27,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.6,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-036",
+            "start": 27.125,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.631,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-037",
+            "start": 27.25,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.662,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-038",
+            "start": 27.375,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.694,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-039",
+            "start": 27.5,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.725,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-040",
+            "start": 27.625,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.756,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-041",
+            "start": 27.75,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.787,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-042",
+            "start": 27.875,
+            "duration": 0.125,
+            "midi": 45,
+            "velocity": 0.819,
+            "articulation": "hit"
+          },
+          {
+            "id": "timpani-043",
+            "start": 28,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 1,
+            "articulation": "hit"
+          }
+        ]
+      },
+      {
+        "id": "crash",
+        "name": "吊镲",
+        "instrumentId": "rock-crash",
+        "color": "#AA8B44",
+        "volume": 0.4,
+        "pan": -0.25,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.35,
+        "notes": [
+          {
+            "id": "crash-001",
+            "start": 16,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.75,
+            "articulation": "hit"
+          },
+          {
+            "id": "crash-002",
+            "start": 28,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.9,
+            "articulation": "hit"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-10-06T17:10:28.442Z"
+  }
+}

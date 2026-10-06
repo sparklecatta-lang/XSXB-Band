@@ -1,0 +1,12 @@
+node_modules/
+dist/
+data/
+logs/
+*.tsbuildinfo
+test-results/
+releases/
+reports/
+exports/
+
+# Local skill install marker
+skills/*/studio-path.txt

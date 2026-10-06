@@ -1,0 +1,4 @@
+interface:
+  display_name: "XSXB-Band 小宝乐队"
+  short_description: "让 Agent 写谱编曲，用真实录音的乐器演奏并导出 WAV / MIDI"
+  default_prompt: "使用 $xsxb-band 按我的要求作曲编曲，存进歌曲库并导出 WAV 试听。"

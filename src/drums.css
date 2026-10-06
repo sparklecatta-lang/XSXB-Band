@@ -1,0 +1,94 @@
+.drum-machine {
+  --drum-blue: #002fa7;
+  --drum-paper: #f4f1e8;
+  --drum-surface: #faf8f1;
+  --drum-orange: #dd8059;
+  --drum-ink: #242a39;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 390px;
+  color: var(--drum-ink);
+  background: var(--drum-paper);
+}
+.drum-toolbar { display: flex; align-items: center; gap: 18px; min-height: 76px; padding: 17px 23px 14px; border-bottom: 1px solid #e1dfd5; }
+.drum-title { display: flex; align-items: center; gap: 11px; margin-right: auto; }
+.drum-title > div { display: flex; flex-direction: column; gap: 5px; }
+.drum-title strong { font-size: 13px; font-weight: 600; letter-spacing: .5px; }
+.drum-title > div > span { font-family: var(--mono, Consolas, monospace); font-size: 7px; letter-spacing: 1.5px; color: #8a8d92; }
+.drum-title-mark { display: grid; grid-template-columns: repeat(2, 8px); gap: 3px; transform: rotate(-7deg); }
+.drum-title-mark i { height: 8px; border: 1px solid var(--drum-blue); border-radius: 2px; }
+.drum-title-mark i:nth-child(1), .drum-title-mark i:nth-child(4) { background: var(--drum-blue); }
+.drum-pagination { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.drum-pagination > button { display: inline-flex; align-items: center; justify-content: center; width: 27px; height: 29px; padding: 0; border-radius: 5px; color: #737b8a; }
+.drum-pagination > button:hover:not(:disabled) { color: var(--drum-blue); background: #e4e8f1; }
+.drum-bar-select { display: flex; align-items: center; gap: 6px; font-family: var(--mono, Consolas, monospace); font-size: 10px; color: #92969a; }
+.drum-bar-select > span:first-child { font-family: inherit; font-size: 10px; }
+.drum-bar-select select { border: 1px solid #d8dce5; border-radius: 4px; padding: 5px 3px 5px 7px; background: var(--drum-surface); color: var(--drum-blue); font-size: 12px; font-weight: 600; cursor: pointer; }
+.drum-meter { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; padding-left: 16px; border-left: 1px solid #d9dcd5; white-space: nowrap; }
+.drum-meter strong { font-family: var(--mono, Consolas, monospace); font-size: 14px; font-weight: 500; }
+.drum-meter strong span { padding: 0 4px; color: #a4a8a9; }
+.drum-meter > span { color: #969b95; font-size: 9px; }
+.drum-scroll { overflow-x: auto; flex: 1; padding: 13px 23px 20px; scrollbar-color: #c7c9c2 #eeece3; }
+.drum-grid { min-width: 680px; }
+.drum-row { display: grid; grid-template-columns: 132px repeat(4, minmax(106px, 1fr)); align-items: center; gap: 11px; min-height: 46px; padding: 3px 0; }
+.drum-group { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+.drum-ruler { min-height: 28px; padding-top: 0; padding-bottom: 7px; }
+.drum-ruler-caption { display: inline-flex; align-items: center; gap: 7px; padding-left: 4px; font-size: 9px; color: #929992; }
+.drum-step-number { position: relative; display: block; text-align: center; font-family: var(--mono, Consolas, monospace); font-size: 9px; color: #b0b3b5; line-height: 18px; }
+.drum-step-number.drum-downbeat { color: #6a778e; font-weight: 600; }
+.drum-step-number.drum-current { color: var(--drum-orange); font-weight: 700; }
+.drum-step-number.drum-current::after { content: ''; position: absolute; width: 3px; height: 3px; bottom: -4px; left: calc(50% - 1.5px); background: var(--drum-orange); border-radius: 50%; }
+.drum-instrument { justify-content: flex-start; min-width: 0; width: 100%; gap: 10px; padding: 4px 3px; border-radius: 5px; text-align: left; }
+.drum-instrument:hover:not(:disabled) { background: #e7e9e1; }
+.drum-instrument-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 28px; height: 29px; color: var(--drum-track-color, var(--drum-blue)); }
+.drum-instrument-copy { display: flex; flex: 1; flex-direction: column; gap: 4px; min-width: 0; }
+.drum-instrument-copy strong { font-size: 11px; font-weight: 500; color: #57616e; white-space: nowrap; }
+.drum-instrument-copy small { color: #a1a59c; font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.drum-row-selected .drum-instrument-copy strong { color: var(--drum-blue); font-weight: 600; }
+.drum-row-muted .drum-group { opacity: .48; }
+.drum-pad { position: relative; display: block; isolation: isolate; min-width: 0; width: 100%; height: 31px; padding: 0; overflow: hidden; border: 1px solid #dcded6; border-radius: 4px; background: #edece3; box-shadow: 0 2px 0 #daddd1; transition: background .12s, box-shadow .12s, transform .08s; }
+.drum-pad.drum-downbeat { border-color: #d8cec1; background: #e9e2d6; box-shadow: 0 2px 0 #d9d0c2; }
+.drum-pad:hover:not(:disabled) { border-color: #a7b7d9; background: #e0e6f1; }
+.drum-pad:active:not(:disabled) { transform: translateY(2px); box-shadow: none; }
+.drum-pad.drum-on { border-color: #123d9e; background: var(--drum-blue); box-shadow: 0 2px 0 #032375; }
+.drum-pad.drum-on:hover:not(:disabled) { background: #1949b5; border-color: #00267f; }
+.drum-pad-light { position: absolute; z-index: 1; top: 5px; left: calc(50% - 1.5px); width: 3px; height: 3px; border-radius: 50%; background: #c8cdc3; }
+.drum-on .drum-pad-light { background: #f2f4ff; box-shadow: 0 0 4px #9bb7ff66; }
+.drum-velocity { position: absolute; z-index: -1; bottom: 0; left: 0; width: 100%; min-height: 2px; background: #ffffff1a; }
+.drum-pad.drum-current { outline: 1px solid #dfa583; outline-offset: 2px; }
+.drum-pad.drum-current.drum-on { outline-color: var(--drum-orange); box-shadow: 0 2px 0 #032375, 0 0 0 1px #dfaa8740; }
+.drum-pad.drum-selected { outline: 2px solid var(--drum-orange); outline-offset: 2px; }
+.drum-pad:focus-visible { outline: 2px solid #4271cc; outline-offset: 3px; }
+.drum-pad.drum-on:focus-visible { outline-color: var(--drum-orange); }
+.drum-pad:disabled { opacity: .35; box-shadow: none; }
+.drum-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 23px; min-height: 40px; padding: 10px 23px; border-top: 1px solid #e1dfd5; font-size: 9px; color: #969d94; }
+.drum-footer > span { display: inline-flex; align-items: center; gap: 5px; }
+.drum-footer kbd { font-family: var(--mono, Consolas, monospace); font-size: 8px; padding: 2px 4px; border: 1px solid #d4d9cd; border-radius: 3px; background: #faf8f1; color: #879184; }
+.drum-legend-dot { width: 5px; height: 5px; border-radius: 1px; background: var(--drum-blue); }
+.drum-footer .drum-limit { color: #ae684a; }
+.drum-empty { padding: 45px 12px; font-size: 12px; color: #879184; }
+@media (max-width: 1230px) {
+  .drum-toolbar { gap: 12px; padding-right: 15px; padding-left: 15px; }
+  .drum-scroll { padding-left: 15px; padding-right: 15px; }
+  .drum-footer { padding-left: 15px; padding-right: 15px; }
+  .drum-title > div > span { font-size: 6px; letter-spacing: 1px; }
+  .drum-title-mark { display: none; }
+  .drum-meter { padding-left: 10px; }
+}
+@media (max-width: 760px) {
+  .drum-toolbar { flex-wrap: wrap; gap: 12px 7px; min-height: 80px; padding: 12px; }
+  .drum-title { flex-basis: calc(100% - 61px); order: 0; }
+  .drum-title > div { flex-direction: row; align-items: baseline; gap: 9px; }
+  .drum-title > div > span { font-size: 6px; }
+  .drum-title strong { font-size: 12px; }
+  .drum-pagination { order: 2; width: 100%; justify-content: space-between; }
+  .drum-meter { order: 1; border: 0; padding: 0; }
+  .drum-meter > span { display: none; }
+  .drum-scroll { padding-left: 12px; padding-right: 12px; }
+  .drum-footer { padding: 10px 12px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drum-machine button { transition: none; }
+}

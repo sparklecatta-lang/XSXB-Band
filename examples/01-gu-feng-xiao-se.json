@@ -1,0 +1,424 @@
+{
+  "project": {
+    "schemaVersion": 1,
+    "id": "gu-feng-xiao-se",
+    "title": "寒鸦 · 古风萧瑟",
+    "bpm": 60,
+    "key": "D minor (羽)",
+    "bars": 8,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "tracks": [
+      {
+        "id": "erhu",
+        "name": "二胡",
+        "instrumentId": "erhu",
+        "color": "#9C3D2E",
+        "volume": 1,
+        "pan": 0.12,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.45,
+        "release": 0.6,
+        "humanize": 0.35,
+        "notes": [
+          {
+            "id": "erhu-01",
+            "start": 8,
+            "duration": 2.5,
+            "midi": 69,
+            "velocity": 0.55,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-02",
+            "start": 10.5,
+            "duration": 0.5,
+            "midi": 72,
+            "velocity": 0.5,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-03",
+            "start": 11,
+            "duration": 1,
+            "midi": 70,
+            "velocity": 0.52,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-04",
+            "start": 12,
+            "duration": 1.5,
+            "midi": 69,
+            "velocity": 0.45,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-05",
+            "start": 16,
+            "duration": 2,
+            "midi": 74,
+            "velocity": 0.6,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-06",
+            "start": 18,
+            "duration": 1,
+            "midi": 77,
+            "velocity": 0.66,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-07",
+            "start": 19,
+            "duration": 1,
+            "midi": 75,
+            "velocity": 0.6,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-08",
+            "start": 20,
+            "duration": 1,
+            "midi": 74,
+            "velocity": 0.52,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-09",
+            "start": 23,
+            "duration": 1,
+            "midi": 72,
+            "velocity": 0.5,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-10",
+            "start": 24,
+            "duration": 1.5,
+            "midi": 70,
+            "velocity": 0.48,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-11",
+            "start": 25.5,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.42,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-12",
+            "start": 26,
+            "duration": 1,
+            "midi": 67,
+            "velocity": 0.45,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-13",
+            "start": 27,
+            "duration": 1,
+            "midi": 65,
+            "velocity": 0.42,
+            "articulation": "sustain"
+          },
+          {
+            "id": "erhu-14",
+            "start": 28,
+            "duration": 3,
+            "midi": 62,
+            "velocity": 0.36,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "zheng",
+        "name": "筝（越南筝）",
+        "instrumentId": "dan-tranh",
+        "color": "#A8432F",
+        "volume": 0.7,
+        "pan": -0.25,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.5,
+        "humanize": 0.35,
+        "notes": [
+          {
+            "id": "zheng-01",
+            "start": 0,
+            "duration": 1,
+            "midi": 50,
+            "velocity": 0.45,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-02",
+            "start": 1,
+            "duration": 0.75,
+            "midi": 69,
+            "velocity": 0.5,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-03",
+            "start": 1.75,
+            "duration": 0.5,
+            "midi": 67,
+            "velocity": 0.42,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-04",
+            "start": 2.25,
+            "duration": 2.5,
+            "midi": 65,
+            "velocity": 0.48,
+            "articulation": "vibrato"
+          },
+          {
+            "id": "zheng-05",
+            "start": 5,
+            "duration": 0.5,
+            "midi": 62,
+            "velocity": 0.42,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-06",
+            "start": 5.5,
+            "duration": 0.5,
+            "midi": 60,
+            "velocity": 0.38,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-07",
+            "start": 6,
+            "duration": 2,
+            "midi": 57,
+            "velocity": 0.45,
+            "articulation": "vibrato"
+          },
+          {
+            "id": "zheng-08",
+            "start": 13,
+            "duration": 0.5,
+            "midi": 77,
+            "velocity": 0.45,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-09",
+            "start": 13.5,
+            "duration": 0.5,
+            "midi": 74,
+            "velocity": 0.4,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-10",
+            "start": 14,
+            "duration": 2,
+            "midi": 72,
+            "velocity": 0.44,
+            "articulation": "vibrato"
+          },
+          {
+            "id": "zheng-11",
+            "start": 21,
+            "duration": 0.5,
+            "midi": 75,
+            "velocity": 0.5,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-12",
+            "start": 21.5,
+            "duration": 0.5,
+            "midi": 74,
+            "velocity": 0.42,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-13",
+            "start": 22,
+            "duration": 0.5,
+            "midi": 70,
+            "velocity": 0.4,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-14",
+            "start": 22.5,
+            "duration": 1.5,
+            "midi": 69,
+            "velocity": 0.38,
+            "articulation": "tremolo"
+          },
+          {
+            "id": "zheng-15",
+            "start": 29,
+            "duration": 0.75,
+            "midi": 63,
+            "velocity": 0.32,
+            "articulation": "pluck"
+          },
+          {
+            "id": "zheng-16",
+            "start": 30,
+            "duration": 2,
+            "midi": 50,
+            "velocity": 0.4,
+            "articulation": "vibrato"
+          }
+        ]
+      },
+      {
+        "id": "cello",
+        "name": "低音持续",
+        "instrumentId": "cello-section",
+        "color": "#6B4C8A",
+        "volume": 0.22,
+        "pan": -0.05,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.5,
+        "release": 1.2,
+        "humanize": 0.2,
+        "notes": [
+          {
+            "id": "cello-01",
+            "start": 0,
+            "duration": 8,
+            "midi": 38,
+            "velocity": 0.32,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-02",
+            "start": 0.5,
+            "duration": 7.5,
+            "midi": 45,
+            "velocity": 0.26,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-03",
+            "start": 8,
+            "duration": 8,
+            "midi": 38,
+            "velocity": 0.38,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-04",
+            "start": 8.5,
+            "duration": 7.5,
+            "midi": 46,
+            "velocity": 0.32,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-05",
+            "start": 16,
+            "duration": 8,
+            "midi": 38,
+            "velocity": 0.42,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-06",
+            "start": 16.5,
+            "duration": 7.5,
+            "midi": 43,
+            "velocity": 0.36,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-07",
+            "start": 24,
+            "duration": 8,
+            "midi": 38,
+            "velocity": 0.36,
+            "articulation": "sustain"
+          },
+          {
+            "id": "cello-08",
+            "start": 24.5,
+            "duration": 7.5,
+            "midi": 51,
+            "velocity": 0.3,
+            "articulation": "sustain"
+          }
+        ]
+      },
+      {
+        "id": "strings",
+        "name": "远处弦乐",
+        "instrumentId": "strings",
+        "color": "#7C5BA6",
+        "volume": 0.6,
+        "pan": 0.3,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.6,
+        "release": 1.2,
+        "notes": [
+          {
+            "id": "strings-01",
+            "start": 12,
+            "duration": 12,
+            "midi": 74,
+            "velocity": 0.22,
+            "articulation": "tremolo"
+          },
+          {
+            "id": "strings-02",
+            "start": 24,
+            "duration": 8,
+            "midi": 75,
+            "velocity": 0.2,
+            "articulation": "tremolo"
+          }
+        ]
+      },
+      {
+        "id": "gong",
+        "name": "远锣",
+        "instrumentId": "gong",
+        "color": "#8A6A2A",
+        "volume": 1,
+        "pan": 0.2,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.5,
+        "notes": [
+          {
+            "id": "gong-01",
+            "start": 0,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.45,
+            "articulation": "hit"
+          },
+          {
+            "id": "gong-02",
+            "start": 24,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.4,
+            "articulation": "hit"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-10-06T12:13:03.125Z"
+  }
+}

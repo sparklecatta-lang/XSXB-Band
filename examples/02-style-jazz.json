@@ -1,0 +1,1619 @@
+{
+  "project": {
+    "schemaVersion": 1,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "id": "style-jazz",
+    "title": "夜色爵士 · Swing",
+    "bpm": 132,
+    "key": "F major",
+    "bars": 8,
+    "tracks": [
+      {
+        "id": "sax",
+        "name": "次中音萨克斯",
+        "instrumentId": "tenor-sax",
+        "color": "#B07A2E",
+        "volume": 0.6,
+        "pan": 0.15,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.22,
+        "release": 0.25,
+        "humanize": 0.35,
+        "notes": [
+          {
+            "id": "sax-001",
+            "start": 0,
+            "duration": 1,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-002",
+            "start": 1,
+            "duration": 0.6667,
+            "midi": 65,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-003",
+            "start": 1.6667,
+            "duration": 0.3333,
+            "midi": 67,
+            "velocity": 0.62,
+            "articulation": "staccato"
+          },
+          {
+            "id": "sax-004",
+            "start": 2,
+            "duration": 1.5,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-005",
+            "start": 3.6667,
+            "duration": 0.3333,
+            "midi": 67,
+            "velocity": 0.62,
+            "articulation": "staccato"
+          },
+          {
+            "id": "sax-006",
+            "start": 4,
+            "duration": 0.6667,
+            "midi": 64,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-007",
+            "start": 4.6667,
+            "duration": 0.3333,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-008",
+            "start": 5,
+            "duration": 0.6667,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-009",
+            "start": 5.6667,
+            "duration": 0.3333,
+            "midi": 58,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-010",
+            "start": 6,
+            "duration": 2,
+            "midi": 57,
+            "velocity": 0.72,
+            "articulation": "vibrato"
+          },
+          {
+            "id": "sax-011",
+            "start": 8.6667,
+            "duration": 0.3333,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-012",
+            "start": 9,
+            "duration": 0.6667,
+            "midi": 64,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-013",
+            "start": 9.6667,
+            "duration": 0.3333,
+            "midi": 67,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-014",
+            "start": 10,
+            "duration": 1.4,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "vibrato"
+          },
+          {
+            "id": "sax-015",
+            "start": 11.6667,
+            "duration": 0.3333,
+            "midi": 70,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-016",
+            "start": 12,
+            "duration": 1,
+            "midi": 72,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-017",
+            "start": 13,
+            "duration": 0.6667,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-018",
+            "start": 13.6667,
+            "duration": 0.3333,
+            "midi": 66,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-019",
+            "start": 14,
+            "duration": 0.6667,
+            "midi": 63,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-020",
+            "start": 14.6667,
+            "duration": 0.3333,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-021",
+            "start": 15,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-022",
+            "start": 16,
+            "duration": 1,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-023",
+            "start": 17,
+            "duration": 0.6667,
+            "midi": 65,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-024",
+            "start": 17.6667,
+            "duration": 0.3333,
+            "midi": 67,
+            "velocity": 0.62,
+            "articulation": "staccato"
+          },
+          {
+            "id": "sax-025",
+            "start": 18,
+            "duration": 1,
+            "midi": 70,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-026",
+            "start": 19,
+            "duration": 1,
+            "midi": 69,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-027",
+            "start": 20,
+            "duration": 0.6667,
+            "midi": 67,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-028",
+            "start": 20.6667,
+            "duration": 0.3333,
+            "midi": 64,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-029",
+            "start": 21,
+            "duration": 0.6667,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-030",
+            "start": 21.6667,
+            "duration": 0.3333,
+            "midi": 61,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-031",
+            "start": 22,
+            "duration": 1.5,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-032",
+            "start": 23.6667,
+            "duration": 0.3333,
+            "midi": 64,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-033",
+            "start": 24,
+            "duration": 2,
+            "midi": 65,
+            "velocity": 0.72,
+            "articulation": "vibrato"
+          },
+          {
+            "id": "sax-034",
+            "start": 26.6667,
+            "duration": 0.3333,
+            "midi": 62,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-035",
+            "start": 27,
+            "duration": 0.6667,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "sustain"
+          },
+          {
+            "id": "sax-036",
+            "start": 27.6667,
+            "duration": 4,
+            "midi": 65,
+            "velocity": 0.72,
+            "articulation": "vibrato"
+          }
+        ]
+      },
+      {
+        "id": "piano",
+        "name": "钢琴 · 伴奏",
+        "instrumentId": "piano",
+        "color": "#002FA7",
+        "volume": 1,
+        "pan": -0.2,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.18,
+        "humanize": 0.3,
+        "notes": [
+          {
+            "id": "piano-001",
+            "start": 0,
+            "duration": 1,
+            "midi": 58,
+            "velocity": 0.7
+          },
+          {
+            "id": "piano-002",
+            "start": 0.008,
+            "duration": 1,
+            "midi": 62,
+            "velocity": 0.68
+          },
+          {
+            "id": "piano-003",
+            "start": 0.016,
+            "duration": 1,
+            "midi": 65,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-004",
+            "start": 0.024,
+            "duration": 1,
+            "midi": 69,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-005",
+            "start": 1.6667,
+            "duration": 0.5,
+            "midi": 58,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-006",
+            "start": 1.6747,
+            "duration": 0.5,
+            "midi": 62,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-007",
+            "start": 1.6827,
+            "duration": 0.5,
+            "midi": 65,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-008",
+            "start": 1.6907,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-009",
+            "start": 4.6667,
+            "duration": 0.9,
+            "midi": 58,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-010",
+            "start": 4.6747,
+            "duration": 0.9,
+            "midi": 62,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-011",
+            "start": 4.6827,
+            "duration": 0.9,
+            "midi": 64,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-012",
+            "start": 4.6907,
+            "duration": 0.9,
+            "midi": 69,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-013",
+            "start": 6.6667,
+            "duration": 0.5,
+            "midi": 58,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-014",
+            "start": 6.6747,
+            "duration": 0.5,
+            "midi": 62,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-015",
+            "start": 6.6827,
+            "duration": 0.5,
+            "midi": 64,
+            "velocity": 0.56
+          },
+          {
+            "id": "piano-016",
+            "start": 6.6907,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.54
+          },
+          {
+            "id": "piano-017",
+            "start": 8,
+            "duration": 1,
+            "midi": 57,
+            "velocity": 0.7
+          },
+          {
+            "id": "piano-018",
+            "start": 8.008,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.68
+          },
+          {
+            "id": "piano-019",
+            "start": 8.016,
+            "duration": 1,
+            "midi": 64,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-020",
+            "start": 8.024,
+            "duration": 1,
+            "midi": 67,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-021",
+            "start": 9.6667,
+            "duration": 0.5,
+            "midi": 57,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-022",
+            "start": 9.6747,
+            "duration": 0.5,
+            "midi": 60,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-023",
+            "start": 9.6827,
+            "duration": 0.5,
+            "midi": 64,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-024",
+            "start": 9.6907,
+            "duration": 0.5,
+            "midi": 67,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-025",
+            "start": 12.6667,
+            "duration": 0.9,
+            "midi": 60,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-026",
+            "start": 12.6747,
+            "duration": 0.9,
+            "midi": 63,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-027",
+            "start": 12.6827,
+            "duration": 0.9,
+            "midi": 66,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-028",
+            "start": 12.6907,
+            "duration": 0.9,
+            "midi": 69,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-029",
+            "start": 14.6667,
+            "duration": 0.5,
+            "midi": 60,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-030",
+            "start": 14.6747,
+            "duration": 0.5,
+            "midi": 63,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-031",
+            "start": 14.6827,
+            "duration": 0.5,
+            "midi": 66,
+            "velocity": 0.56
+          },
+          {
+            "id": "piano-032",
+            "start": 14.6907,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.54
+          },
+          {
+            "id": "piano-033",
+            "start": 16,
+            "duration": 1,
+            "midi": 58,
+            "velocity": 0.7
+          },
+          {
+            "id": "piano-034",
+            "start": 16.008,
+            "duration": 1,
+            "midi": 62,
+            "velocity": 0.68
+          },
+          {
+            "id": "piano-035",
+            "start": 16.016,
+            "duration": 1,
+            "midi": 65,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-036",
+            "start": 16.024,
+            "duration": 1,
+            "midi": 69,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-037",
+            "start": 17.6667,
+            "duration": 0.5,
+            "midi": 58,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-038",
+            "start": 17.6747,
+            "duration": 0.5,
+            "midi": 62,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-039",
+            "start": 17.6827,
+            "duration": 0.5,
+            "midi": 65,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-040",
+            "start": 17.6907,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-041",
+            "start": 20.6667,
+            "duration": 0.9,
+            "midi": 58,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-042",
+            "start": 20.6747,
+            "duration": 0.9,
+            "midi": 62,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-043",
+            "start": 20.6827,
+            "duration": 0.9,
+            "midi": 64,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-044",
+            "start": 20.6907,
+            "duration": 0.9,
+            "midi": 69,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-045",
+            "start": 22.6667,
+            "duration": 0.5,
+            "midi": 58,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-046",
+            "start": 22.6747,
+            "duration": 0.5,
+            "midi": 62,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-047",
+            "start": 22.6827,
+            "duration": 0.5,
+            "midi": 64,
+            "velocity": 0.56
+          },
+          {
+            "id": "piano-048",
+            "start": 22.6907,
+            "duration": 0.5,
+            "midi": 69,
+            "velocity": 0.54
+          },
+          {
+            "id": "piano-049",
+            "start": 24,
+            "duration": 1,
+            "midi": 57,
+            "velocity": 0.7
+          },
+          {
+            "id": "piano-050",
+            "start": 24.008,
+            "duration": 1,
+            "midi": 60,
+            "velocity": 0.68
+          },
+          {
+            "id": "piano-051",
+            "start": 24.016,
+            "duration": 1,
+            "midi": 62,
+            "velocity": 0.66
+          },
+          {
+            "id": "piano-052",
+            "start": 24.024,
+            "duration": 1,
+            "midi": 67,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-053",
+            "start": 25.6667,
+            "duration": 0.5,
+            "midi": 57,
+            "velocity": 0.64
+          },
+          {
+            "id": "piano-054",
+            "start": 25.6747,
+            "duration": 0.5,
+            "midi": 60,
+            "velocity": 0.62
+          },
+          {
+            "id": "piano-055",
+            "start": 25.6827,
+            "duration": 0.5,
+            "midi": 62,
+            "velocity": 0.6
+          },
+          {
+            "id": "piano-056",
+            "start": 25.6907,
+            "duration": 0.5,
+            "midi": 67,
+            "velocity": 0.58
+          },
+          {
+            "id": "piano-057",
+            "start": 28,
+            "duration": 3.5,
+            "midi": 57,
+            "velocity": 0.5
+          },
+          {
+            "id": "piano-058",
+            "start": 28.008,
+            "duration": 3.5,
+            "midi": 60,
+            "velocity": 0.48
+          },
+          {
+            "id": "piano-059",
+            "start": 28.016,
+            "duration": 3.5,
+            "midi": 62,
+            "velocity": 0.46
+          },
+          {
+            "id": "piano-060",
+            "start": 28.024,
+            "duration": 3.5,
+            "midi": 67,
+            "velocity": 0.44
+          }
+        ]
+      },
+      {
+        "id": "bass",
+        "name": "低音提琴 · Walking",
+        "instrumentId": "bass",
+        "color": "#50765D",
+        "volume": 1,
+        "pan": 0.05,
+        "muted": false,
+        "solo": false,
+        "humanize": 0.25,
+        "notes": [
+          {
+            "id": "bass-001",
+            "start": 0,
+            "duration": 0.92,
+            "midi": 43,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-002",
+            "start": 1,
+            "duration": 0.92,
+            "midi": 45,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-003",
+            "start": 2,
+            "duration": 0.92,
+            "midi": 46,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-004",
+            "start": 3,
+            "duration": 0.92,
+            "midi": 47,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-005",
+            "start": 4,
+            "duration": 0.92,
+            "midi": 48,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-006",
+            "start": 5,
+            "duration": 0.92,
+            "midi": 46,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-007",
+            "start": 6,
+            "duration": 0.92,
+            "midi": 45,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-008",
+            "start": 7,
+            "duration": 0.92,
+            "midi": 43,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-009",
+            "start": 8,
+            "duration": 0.92,
+            "midi": 41,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-010",
+            "start": 9,
+            "duration": 0.92,
+            "midi": 43,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-011",
+            "start": 10,
+            "duration": 0.92,
+            "midi": 45,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-012",
+            "start": 11,
+            "duration": 0.92,
+            "midi": 48,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-013",
+            "start": 12,
+            "duration": 0.92,
+            "midi": 50,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-014",
+            "start": 13,
+            "duration": 0.92,
+            "midi": 42,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-015",
+            "start": 14,
+            "duration": 0.92,
+            "midi": 45,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-016",
+            "start": 15,
+            "duration": 0.92,
+            "midi": 48,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-017",
+            "start": 16,
+            "duration": 0.92,
+            "midi": 43,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-018",
+            "start": 17,
+            "duration": 0.92,
+            "midi": 46,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-019",
+            "start": 18,
+            "duration": 0.92,
+            "midi": 50,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-020",
+            "start": 19,
+            "duration": 0.92,
+            "midi": 49,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-021",
+            "start": 20,
+            "duration": 0.92,
+            "midi": 48,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-022",
+            "start": 21,
+            "duration": 0.92,
+            "midi": 43,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-023",
+            "start": 22,
+            "duration": 0.92,
+            "midi": 40,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-024",
+            "start": 23,
+            "duration": 0.92,
+            "midi": 42,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-025",
+            "start": 24,
+            "duration": 0.92,
+            "midi": 41,
+            "velocity": 0.95
+          },
+          {
+            "id": "bass-026",
+            "start": 25,
+            "duration": 0.92,
+            "midi": 45,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-027",
+            "start": 26,
+            "duration": 0.92,
+            "midi": 48,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-028",
+            "start": 27,
+            "duration": 0.92,
+            "midi": 50,
+            "velocity": 0.85
+          },
+          {
+            "id": "bass-029",
+            "start": 28,
+            "duration": 3.5,
+            "midi": 41,
+            "velocity": 0.95
+          }
+        ]
+      },
+      {
+        "id": "ride",
+        "name": "镲 · 叮当节奏",
+        "instrumentId": "rock-hihat",
+        "color": "#7F8760",
+        "volume": 1,
+        "pan": 0.3,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.12,
+        "humanize": 0.3,
+        "notes": [
+          {
+            "id": "ride-001",
+            "start": 0,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-002",
+            "start": 1,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-003",
+            "start": 1.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-004",
+            "start": 2,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-005",
+            "start": 3,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-006",
+            "start": 3.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-007",
+            "start": 4,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-008",
+            "start": 5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-009",
+            "start": 5.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-010",
+            "start": 6,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-011",
+            "start": 7,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-012",
+            "start": 7.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-013",
+            "start": 8,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-014",
+            "start": 9,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-015",
+            "start": 9.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-016",
+            "start": 10,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-017",
+            "start": 11,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-018",
+            "start": 11.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-019",
+            "start": 12,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-020",
+            "start": 13,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-021",
+            "start": 13.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-022",
+            "start": 14,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-023",
+            "start": 15,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-024",
+            "start": 15.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-025",
+            "start": 16,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-026",
+            "start": 17,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-027",
+            "start": 17.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-028",
+            "start": 18,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-029",
+            "start": 19,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-030",
+            "start": 19.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-031",
+            "start": 20,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-032",
+            "start": 21,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-033",
+            "start": 21.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-034",
+            "start": 22,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-035",
+            "start": 23,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-036",
+            "start": 23.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-037",
+            "start": 24,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.8,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-038",
+            "start": 25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-039",
+            "start": 25.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-040",
+            "start": 26,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.78,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-041",
+            "start": 27,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.72,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-042",
+            "start": 27.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.52,
+            "articulation": "hit"
+          },
+          {
+            "id": "ride-043",
+            "start": 28,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.6,
+            "articulation": "open"
+          }
+        ]
+      },
+      {
+        "id": "snare",
+        "name": "军鼓 · 鼓边",
+        "instrumentId": "rock-snare",
+        "color": "#8D6258",
+        "volume": 1,
+        "pan": -0.1,
+        "muted": false,
+        "solo": false,
+        "reverb": 0.12,
+        "humanize": 0.3,
+        "notes": [
+          {
+            "id": "snare-001",
+            "start": 6.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.35,
+            "articulation": "crossstick"
+          },
+          {
+            "id": "snare-002",
+            "start": 14.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.35,
+            "articulation": "crossstick"
+          },
+          {
+            "id": "snare-003",
+            "start": 15.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.45,
+            "articulation": "crossstick"
+          },
+          {
+            "id": "snare-004",
+            "start": 22.6667,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.35,
+            "articulation": "crossstick"
+          }
+        ]
+      },
+      {
+        "id": "kick",
+        "name": "底鼓 · 轻踩",
+        "instrumentId": "rock-kick",
+        "color": "#75614E",
+        "volume": 0.5,
+        "pan": 0,
+        "muted": false,
+        "solo": false,
+        "humanize": 0.2,
+        "notes": [
+          {
+            "id": "kick-001",
+            "start": 0,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-002",
+            "start": 1,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-003",
+            "start": 2,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-004",
+            "start": 3,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-005",
+            "start": 4,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-006",
+            "start": 5,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-007",
+            "start": 6,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-008",
+            "start": 7,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-009",
+            "start": 8,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-010",
+            "start": 9,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-011",
+            "start": 10,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-012",
+            "start": 11,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-013",
+            "start": 12,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-014",
+            "start": 13,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-015",
+            "start": 14,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-016",
+            "start": 15,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-017",
+            "start": 16,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-018",
+            "start": 17,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-019",
+            "start": 18,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-020",
+            "start": 19,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-021",
+            "start": 20,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-022",
+            "start": 21,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-023",
+            "start": 22,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-024",
+            "start": 23,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-025",
+            "start": 24,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-026",
+            "start": 25,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-027",
+            "start": 26,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-028",
+            "start": 27,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.18,
+            "articulation": "hit"
+          },
+          {
+            "id": "kick-029",
+            "start": 28,
+            "duration": 0.25,
+            "midi": 60,
+            "velocity": 0.35,
+            "articulation": "hit"
+          }
+        ]
+      }
+    ],
+    "updatedAt": "2026-10-06T17:10:28.291Z"
+  }
+}
