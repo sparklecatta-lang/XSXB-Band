@@ -34,7 +34,7 @@ The agent picks instruments, writes the score, renders, checks the report and re
 
 To edit by hand, open http://127.0.0.1:4318: piano roll, drum machine, per-track volume / pan / reverb, articulations and guitar effects. The UI is in Chinese; see [docs/GUIDE.md](docs/GUIDE.md).
 
-`examples/` holds six projects in different styles (Chinese ambient, jazz, film score, trap, acoustic folk, folk metal) for your agent to open and modify.
+`examples/` holds nine projects in different styles (Chinese ambient, jazz, film score, trap, acoustic folk, folk metal, a guzheng-and-harp-into-metal boss theme, G-funk, Chinese jazz hip-hop) for your agent to open and modify.
 
 ## Instruments
 
