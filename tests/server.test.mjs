@@ -448,3 +448,51 @@ test('song library mirrors the active project and supports open, rename, duplica
   assert.equal(blank.status, 201);
   assert.equal(blank.body.tracks, 0);
 });
+
+test('personal instruments in data/user-instruments are listed, never downloaded, and usable in songs', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'klein-server-test-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  await mkdir(path.join(root, 'public'));
+  await mkdir(path.join(root, 'data/user-instruments'), { recursive: true });
+  await mkdir(path.join(root, 'data/samples/my-voice'), { recursive: true });
+  await writeFile(path.join(root, 'public/library.json'), JSON.stringify(library));
+  await writeFile(path.join(root, 'public/demo.json'), JSON.stringify(project));
+  await writeFile(path.join(root, 'data/user-instruments/my-voice.json'), JSON.stringify({ id: 'my-voice', name: '我的人声', license: 'personal', family: 'vocal',
+    articulations: [{ id: 'oo', name: '乌' }], samples: [
+      { midi: 48, url: '/samples/my-voice/oo-48.wav', downloadUrl: 'https://example.org/should-be-dropped.wav', articulation: 'oo', loopStart: 0.6, loopEnd: 3.4 },
+      { midi: 60, url: '/samples/my-voice/oo-60.wav', articulation: 'oo' },
+    ] }));
+  await writeFile(path.join(root, 'data/samples/my-voice/oo-48.wav'), wave);
+  let downloads = 0;
+  const { app, close } = await createApp({ root, serveFrontend: false, downloader: async () => { downloads += 1; } });
+  const server = app.listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  t.after(async () => { server.close(); server.closeAllConnections(); await close(); });
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const voice = (await (await fetch(`${base}/api/library`)).json()).find((item) => item.id === 'my-voice');
+  assert.equal(voice.personal, true);
+  assert.equal(voice.installed, false);
+  assert.ok(voice.samples.every((sample) => sample.downloadUrl === undefined));
+  assert.equal(voice.samples[0].loopEnd, 3.4);
+  const ensure = await fetch(`${base}/api/instruments/ensure`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ids: ['my-voice'] }) });
+  assert.equal(ensure.status, 502);
+  assert.match((await ensure.json()).instruments[0].error, /缺少本地文件/);
+  assert.equal(downloads, 0);
+  const song = { ...structuredClone(project), id: 'acappella' };
+  song.tracks[0] = { ...song.tracks[0], instrumentId: 'my-voice', articulation: 'oo' };
+  assert.deepEqual(validateProject(song, (await (await fetch(`${base}/api/library`)).json())), []);
+});
+
+test('voice-kit takes are stored per timeline item as WAV, keeping one previous take', async (t) => {
+  const { root, request, base } = await fixture(t);
+  await mkdir(path.join(root, 'voice-kit'));
+  await writeFile(path.join(root, 'voice-kit/timeline.json'), JSON.stringify({ sections: [{ id: '01', items: [{ id: '01-43' }] }] }));
+  const take = (bytes) => request('/api/voice-kit/takes/01-43', 'PUT', { wav: Buffer.concat([Buffer.from('RIFF\0\0\0\0WAVE'), Buffer.alloc(bytes)]).toString('base64') });
+  assert.equal((await take(64)).status, 200);
+  assert.equal((await take(128)).status, 200);
+  assert.deepEqual(Object.keys((await request('/api/voice-kit/takes')).body), ['01-43']);
+  assert.equal((await readFile(path.join(root, 'voice-kit/recordings/items/01-43.prev.wav'))).length, 12 + 64);
+  assert.equal((await request('/api/voice-kit/takes/99-1', 'PUT', { wav: 'UklGRg==' })).status, 404);
+  assert.equal((await request('/api/voice-kit/takes/01-43', 'PUT', { wav: Buffer.from('not a wav file at all, definitely not').toString('base64') })).status, 400);
+  assert.equal((await fetch(`${base()}/voice-kit/timeline.json`)).status, 200);
+});

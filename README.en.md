@@ -38,32 +38,50 @@ To edit by hand, open http://127.0.0.1:4318: piano roll, drum machine, per-track
 
 ## Instruments
 
-42 recorded instruments, plus 2 measured guitar-cabinet IRs and 4 NAM neural amp models:
+71 instruments, plus 2 measured guitar-cabinet IRs and 4 NAM neural amp models:
 
 | Group | Instruments |
 | --- | --- |
-| Keys | Upright piano, FM electric piano (Yamaha TX81Z) |
+| Keys | Upright piano, FM electric piano (Yamaha TX81Z), reed organ |
 | Strings & guitars | Violin section, cello section, concert harp, acoustic guitar, clean electric guitar, layered electric guitar (sustain / staccato), solid-body electric guitar DI |
-| Bass | Upright bass, picked electric bass, 808 bass |
-| Winds & brass | Flute, tenor saxophone, French horn, trumpet, trombone |
-| Mallets & percussion | Marimba, vibraphone, kalimba, timpani, gong |
-| Drums | Layered acoustic kit (kick, snare, hi-hat, tom, crash), Roland TR-808 (kick, snare, clap, hats, rim / cowbell / clave / maracas), basic kit pieces |
-| Chinese & Asian | Zither (Vietnamese đàn tranh), dizi, erhu |
+| Bass | Upright bass, picked electric bass, 808 bass, Moog-style synth bass (with glide) |
+| Winds & brass | Flute, oboe, tenor saxophone (legato, vibrato), French horn, trumpet, trombone |
+| Synth | G-funk whine lead (round and nasal variants, with portamento) |
+| Mallets & percussion | Marimba, vibraphone, kalimba, timpani, gong, tubular bells |
+| Drums | Layered acoustic kit (kick, snare, hi-hat, tom, crash), ride, flat ride, Roland TR-808 (kick, snare, clap, hats, rim / cowbell / clave / maracas), basic kit pieces |
+| Hand percussion | Congas, bongos, frame drum, tambourine, sleigh bells, finger cymbals, Nepalese bells, bell tree, wind chimes |
+| Chinese & Asian | Guzheng (real, tuned D F G A C), suona, xiao, dizi, erhu, Vietnamese đàn tranh |
+| Voice | XSXB voice (male sustains, vocal bass, falsetto), XSXB voice · female, two beatbox kits, plus your own recorded voice (below) |
+| Sample crate | Public-domain speech (Apollo, JFK), classical phrases, CC0 vocal shots, home-made jazz record chops; chops are time-stretched to the song tempo |
+| Texture | Vinyl crackle |
 
 The live list is served at `/api/library`.
+
+## Use your own voice
+
+No usable CC0 sustained-choir samples exist, so pitched voices come from you:
+
+1. Run `start.bat` and open http://127.0.0.1:4318/voice-kit/ in Chrome or Edge.
+2. Press record for each note: a reference tone, a two-click count-in, four seconds of singing, then it stops and saves by itself. The 45 required notes take about 10 minutes. See [voice-kit/录音说明.md](voice-kit/录音说明.md) (in Chinese).
+3. Run `python voice-kit/slice_voice.py`. It slices, pitch-measures, corrects off-pitch notes, loops the sustains and splits repeated hits by their waveform, producing a personal voice instrument with oo / aa / hum / "dm" bass / "ba" / falsetto articulations, plus a personal beatbox if you recorded one.
+4. Optional: `python voice-kit/derive_voice.py` derives a female-sounding version with the WORLD vocoder; `voice-kit/publish_voice.py` publishes your voice as CC0 to your own GitHub repository.
+
+Your agent can then write wordless a cappella, or mix voices with instruments. Personal instruments stay in your local `data/` folder; they are never uploaded or committed. The author's own set is published as "XSXB voice" and ready to use.
 
 ## Samples and downloads
 
 - **The repository contains no audio.** `public/library.json` only records each file's author repository, pinned download URL, size, SHA-256 and licence.
 - When a project uses an instrument, the studio downloads it from the author's original URL into `data/samples/` and verifies it before use. Only the instruments you use are fetched; the full set is about 1.5 GB.
 - All instrument recordings are CC0. The NAM amp models are GPL-3.0 and are likewise downloaded on demand, never redistributed here.
-- Per-file sources: [docs/SAMPLE-LICENSES.md](docs/SAMPLE-LICENSES.md), [docs/REALISM-SOURCES.md](docs/REALISM-SOURCES.md), [docs/HIPHOP-SOURCES.md](docs/HIPHOP-SOURCES.md), [docs/METAL-SAMPLE-LICENSES.md](docs/METAL-SAMPLE-LICENSES.md), [docs/AMP-SOURCES.md](docs/AMP-SOURCES.md) (in Chinese).
+- The voices, guzheng, suona, xiao, sample crate, record chops and G-funk synths were recorded, processed or synthesised for this project from CC0 / public-domain material. They are hosted at [XSXB-Band-Samples](https://github.com/sparklecatta-lang/XSXB-Band-Samples), also CC0, with SFZ files for use in any sampler. Every crate chop's source is listed in [docs/SAMPLE-CRATE.md](docs/SAMPLE-CRATE.md) (in Chinese).
+- Per-file sources: [docs/SAMPLE-LICENSES.md](docs/SAMPLE-LICENSES.md), [docs/REALISM-SOURCES.md](docs/REALISM-SOURCES.md), [docs/HIPHOP-SOURCES.md](docs/HIPHOP-SOURCES.md), [docs/METAL-SAMPLE-LICENSES.md](docs/METAL-SAMPLE-LICENSES.md), [docs/AMP-SOURCES.md](docs/AMP-SOURCES.md), [docs/VOCAL-SOURCES.md](docs/VOCAL-SOURCES.md) (in Chinese).
 
 ## Limitations
 
-- The 808 bass has no glide, and samples have no loop points, so long notes end with the recording.
-- The zither is a Vietnamese đàn tranh, not a guzheng; dizi and erhu are lossy public previews with a single velocity layer.
-- No real palm muting, bends or legato; open hi-hats are not choked by closed ones.
+- The 808 bass has no glide, and its samples have no loop points, so long notes end with the recording. Use the Moog-style synth bass when you need slides.
+- The sampler cannot sing lyrics: voices are wordless vowels and beatbox.
+- Guzheng, dizi and erhu come from lossy public previews; suona and xiao are stand-ins shaped from oboe and recorder samples.
+- No real palm muting or bends on guitars; legato exists only on voices, sax, xiao and synths; open hi-hats are not choked by closed ones.
 - The agent cannot judge whether it sounds good. Your ears decide.
 
 ## For developers

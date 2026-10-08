@@ -4,6 +4,7 @@ import { NamEngine } from './vendor/nam/engine';
 import { NamWorkerPool } from './nam-workers';
 import { effectiveArticulation, sampleCandidates, selectSample, trackSeed } from './sample-selection';
 import { createRoomReverb, noteVariation, type RoomReverb } from './space';
+import { timeStretch } from './stretch';
 
 export interface PlayOptions {
   fromBeat?: number;
@@ -23,6 +24,11 @@ interface ScheduledNote {
   sample: InstrumentSample;
   /** Deterministic humanisation detune, in cents. */
   cents: number;
+  /** Legato: the note continues straight out of the previous one (skip the onset) / hands over to the next (crossfade out). */
+  legatoIn?: boolean;
+  legatoOut?: boolean;
+  /** Portamento: the joined note starts at this pitch and slides to its own (articulation `glide`). */
+  glideFrom?: number;
 }
 
 interface Voice { source: AudioBufferSourceNode; gain: GainNode }
@@ -34,6 +40,12 @@ const clamp = (value: number, min: number, max: number) => Math.min(max, Math.ma
 const NAM_CHUNK_SECONDS = 6;
 const NAM_PREROLL_SECONDS = 0.3;
 const NAM_OVERLAP_SECONDS = 0.02;
+// Crossfade between joined legato notes, and how much of the next note's onset is skipped (never past its loop start).
+const LEGATO_FADE = 0.08;
+// A usable sustain loop inside the decoded buffer, or null for one-shot playback.
+const loopOf = ({ sample, buffer }: { sample: InstrumentSample; buffer: AudioBuffer }): [number, number] | null =>
+  sample.loopStart !== undefined && sample.loopEnd !== undefined && sample.loopStart >= 0
+    && sample.loopEnd - sample.loopStart >= 0.05 && sample.loopEnd <= buffer.duration ? [sample.loopStart, sample.loopEnd] : null;
 const validNote = (note: Note) => Number.isFinite(note.midi) && Number.isFinite(note.start)
   && Number.isFinite(note.duration) && note.start >= 0 && note.duration > 0 && note.velocity > 0;
 
@@ -61,6 +73,7 @@ export class AudioEngine {
   private reverb?: RoomReverb;
   private volume = 0.8;
   private buffers = new Map<string, Promise<AudioBuffer>>();
+  private stretchCache = new Map<string, Promise<AudioBuffer>>();
   private voices = new Set<Voice>();
   private buses = new Map<string, TrackBus>();
   private trackSettings = new Map<string, Track>();
@@ -191,7 +204,7 @@ export class AudioEngine {
 
   private assignments(project: Project) {
     const { beats, secondsPerBeat } = projectTiming(project);
-    const events: { note: Note; track: Track; instrument: Instrument; sample: InstrumentSample; cents: number }[] = [];
+    const events: { note: Note; track: Track; instrument: Instrument; sample: InstrumentSample; cents: number; legatoIn?: boolean; legatoOut?: boolean; glideFrom?: number }[] = [];
     for (const track of audibleTracks(project)) {
       const notes = track.notes.filter(note => validNote(note) && note.start < beats).sort((a, b) => a.start - b.start || a.midi - b.midi);
       if (!notes.length) continue;
@@ -209,6 +222,19 @@ export class AudioEngine {
         counters.set(key, rr + 1);
         const sample = candidates[rr % candidates.length];
         events.push({ note: { ...note, start, velocity, duration: Math.max(0.001, Math.min(note.duration, beats - start)) }, track, instrument, sample, cents: variation.cents });
+      }
+      // Legato articulations (sung vowels): notes that touch within ~60 ms are joined instead of re-attacked.
+      const own = events.filter(e => e.track === track && instrument.articulations?.find(a => a.id === e.sample.articulation)?.legato);
+      const touch = 0.06 / secondsPerBeat;
+      for (const a of own) {
+        const end = a.note.start + a.note.duration;
+        for (const b of own) {
+          if (b !== a && Math.abs(b.note.start - end) <= touch && b.note.start > a.note.start) {
+            a.legatoOut = true; b.legatoIn = true;
+            // Glide articulations (a synth lead) slide from the previous pitch instead of just crossfading.
+            if (instrument.articulations?.find(x => x.id === b.sample.articulation)?.glide && a.note.midi !== b.note.midi) b.glideFrom = a.note.midi;
+          }
+        }
       }
     }
     return events.sort((a, b) => a.note.start - b.note.start);
@@ -282,7 +308,7 @@ export class AudioEngine {
       return at < end && at + this.voiceLength(event, secondsPerBeat) > from;
     });
     const key = JSON.stringify([trackId, track.instrumentId, effects.namModelId, effects.drive, sampleRate, secondsPerBeat, k, totalSeconds,
-      relevant.map(event => [event.note.id, event.note.midi, event.note.start, event.note.duration, event.note.velocity, event.sample.url, event.cents, event.track.release])]);
+      relevant.map(event => [event.note.id, event.note.midi, event.note.start, event.note.duration, event.note.velocity, event.sample.url, event.cents, event.track.release, event.glideFrom])]);
     const cached = this.namChunks.get(key);
     if (cached) return cached;
     const pending = this.renderNamSpan(track, relevant, from, start, end, secondsPerBeat, sampleRate).then(wet => {
@@ -338,23 +364,60 @@ export class AudioEngine {
   }
 
   private async events(project: Project): Promise<ScheduledNote[]> {
-    return Promise.all(this.assignments(project).map(async event => ({ ...event, buffer: await this.loadSample(event.instrument, event.sample), root: event.sample.midi })));
+    return Promise.all(this.assignments(project).map(async event => {
+      const buffer = await this.loadSample(event.instrument, event.sample);
+      const { sample } = event;
+      // Tempo-tagged chops follow the song: stretch so that, after any pitch transposition (which also speeds the
+      // playback up or down), the material still lands at the project's tempo.
+      if (!event.instrument.stretch || !sample.bpm) return { ...event, buffer, root: sample.midi };
+      const rate = 2 ** ((event.note.midi - sample.midi) / 12 + ((sample.tuneCents ?? 0) + event.cents) / 1200);
+      const factor = Math.round((sample.bpm / project.bpm) * rate * 1e4) / 1e4;
+      if (Math.abs(factor - 1) < 0.005) return { ...event, buffer, root: sample.midi };
+      const scale = (value?: number) => value === undefined ? undefined : value * factor;
+      return {
+        ...event, root: sample.midi, buffer: await this.stretched(buffer, sample.url, factor),
+        sample: { ...sample, offsetSeconds: scale(sample.offsetSeconds), loopStart: scale(sample.loopStart), loopEnd: scale(sample.loopEnd) },
+      };
+    }));
+  }
+
+  private stretched(buffer: AudioBuffer, url: string, factor: number): Promise<AudioBuffer> {
+    const key = `${url}|${factor}`;
+    if (!this.stretchCache.has(key)) {
+      this.stretchCache.set(key, Promise.resolve().then(() => {
+        const channels = Array.from({ length: buffer.numberOfChannels }, (_, c) => buffer.getChannelData(c));
+        const out = timeStretch(channels, factor, buffer.sampleRate);
+        const result = new AudioBuffer({ length: out[0].length, numberOfChannels: out.length, sampleRate: buffer.sampleRate });
+        out.forEach((data, c) => result.copyToChannel(data, c));
+        return result;
+      }));
+    }
+    return this.stretchCache.get(key)!;
   }
 
   private playbackRate(event: ScheduledNote) {
     return 2 ** ((event.note.midi - event.root) / 12 + ((event.sample.tuneCents ?? 0) + event.cents) / 1200);
   }
 
+  private legatoSkip(event: ScheduledNote): number {
+    if (!event.legatoIn) return 0;
+    const loop = loopOf(event);
+    return Math.min(0.15, loop ? loop[0] : 0.15, Math.max(0, event.buffer.duration - (event.sample.offsetSeconds ?? 0) - 0.2));
+  }
+
   private noteRelease(event: ScheduledNote): number {
-    return event.track.release === undefined
+    const release = event.track.release === undefined
       ? clamp(event.instrument.release ?? 0.15, 0.012, 2)
       : clamp(event.track.release, 0.005, 2);
+    // Short articulations (a sung "dm", a "ba") stop when the note ends instead of ringing out the whole sample.
+    const short = event.instrument.articulations?.find(a => a.id === event.sample.articulation)?.release;
+    return short === undefined ? release : Math.min(release, clamp(short, 0.005, 2));
   }
 
   private voiceLength(event: ScheduledNote, secondsPerBeat: number, elapsed = 0): number {
     const rate = this.playbackRate(event);
-    const available = Math.max(0, (event.buffer.duration - (event.sample.offsetSeconds ?? 0)) / rate - elapsed);
-    const release = this.noteRelease(event);
+    const available = loopOf(event) ? Infinity : Math.max(0, (event.buffer.duration - (event.sample.offsetSeconds ?? 0) - this.legatoSkip(event)) / rate - elapsed);
+    const release = event.legatoOut ? LEGATO_FADE : this.noteRelease(event);
     // Drums are one-shot recordings; a short grid note must not clip their natural decay.
     return Math.min(available, event.instrument.percussive
       ? 12 : Math.max(0, event.note.duration * secondsPerBeat - elapsed) + release);
@@ -371,10 +434,18 @@ export class AudioEngine {
     const velocityGain = event.sample.velocityTracking === false ? 1
       : clamp(event.note.velocity / (event.sample.velocityReference ?? 1), 0, 1) ** 1.35;
     const level = 0.55 * velocityGain * 10 ** (clamp(instrumentDb, -36, 24) / 20);
-    const attack = Math.min(event.instrument.attack ?? (event.instrument.percussive ? 0.001 : 0.004), length / 4);
-    const release = Math.min(event.instrument.percussive ? 0.014 : this.noteRelease(event), length / 2);
+    // An articulation may set its own fade-in (a breathy sustain swells in, a staccato of the same instrument does not).
+    const articulationAttack = event.instrument.articulations?.find(a => a.id === event.sample.articulation)?.attack;
+    const attack = Math.min(event.legatoIn ? LEGATO_FADE : articulationAttack ?? event.instrument.attack ?? (event.instrument.percussive ? 0.001 : 0.004), length / 4);
+    const release = Math.min(event.instrument.percussive ? 0.014 : event.legatoOut ? LEGATO_FADE : this.noteRelease(event), length / 2);
     source.buffer = event.buffer;
     source.playbackRate.value = rate;
+    const glide = event.glideFrom === undefined || elapsed > 0 ? 0
+      : clamp(event.instrument.articulations?.find(a => a.id === event.sample.articulation)?.glide ?? 0, 0, 1);
+    if (glide > 0) {
+      source.playbackRate.setValueAtTime(rate * 2 ** ((event.glideFrom! - event.note.midi) / 12), when);
+      source.playbackRate.exponentialRampToValueAtTime(rate, when + Math.min(glide, length / 2));
+    }
     gain.gain.setValueAtTime(0, when);
     gain.gain.linearRampToValueAtTime(level, when + attack);
     gain.gain.setValueAtTime(level, when + Math.max(attack, length - release));
@@ -389,7 +460,13 @@ export class AudioEngine {
       gain.disconnect();
       onEnded?.();
     };
-    source.start(when, Math.max(0, (event.sample.offsetSeconds ?? 0) + elapsed * rate));
+    let offset = Math.max(0, (event.sample.offsetSeconds ?? 0) + this.legatoSkip(event) + elapsed * rate);
+    const loop = loopOf(event);
+    if (loop) {
+      source.loop = true; source.loopStart = loop[0]; source.loopEnd = loop[1];
+      if (offset > loop[1]) offset = loop[0] + (offset - loop[0]) % (loop[1] - loop[0]);
+    }
+    source.start(when, offset);
     source.stop(when + length + 0.002);
   }
 

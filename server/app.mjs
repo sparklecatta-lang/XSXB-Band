@@ -1,11 +1,12 @@
 import express from 'express';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { access } from 'node:fs/promises';
+import { access, readdir } from 'node:fs/promises';
 import { validateProject } from './validation.mjs';
 import { readJson, atomicJson, serialQueue } from './storage.mjs';
 import { downloadSample, sampleInstalled, samplePath } from './download.mjs';
 import { createSongStore } from './songs.mjs';
+import { mountVoiceKit } from './voice-kit.mjs';
 
 function localRequest(req, res, next) {
   const host = req.headers.host;
@@ -25,7 +26,14 @@ export async function createApp({ root, dataDir = path.join(root, 'data'), downl
   const samplesRoot = path.join(dataDir, 'samples');
   const projectFile = path.join(dataDir, 'project.json');
   const requestFile = path.join(dataDir, 'requests.json');
-  const library = await readJson(path.join(publicDir, 'library.json'));
+  // Personal instruments (e.g. your own recorded voice) live only in data/user-instruments and are never downloaded or published.
+  const userDir = path.join(dataDir, 'user-instruments');
+  const personal = [];
+  for (const name of (await readdir(userDir).catch(() => [])).filter((file) => file.endsWith('.json')).sort()) {
+    const item = await readJson(path.join(userDir, name));
+    personal.push({ ...item, personal: true, samples: (item?.samples ?? []).map(({ downloadUrl: _ignored, ...sample }) => sample) });
+  }
+  const library = [...await readJson(path.join(publicDir, 'library.json')), ...personal];
   if (!Array.isArray(library) || new Set(library.map((item) => item.id)).size !== library.length) throw new Error('library.json 必须为 ID 不重复的数组');
   for (const item of library) {
     if (!/^[A-Za-z0-9_-]{1,80}$/.test(item.id) || !Array.isArray(item.samples) || !item.samples.length) throw new Error('音色清单格式错误');
@@ -56,7 +64,9 @@ export async function createApp({ root, dataDir = path.join(root, 'data'), downl
       const task = (async () => {
         for (const sample of instrument.samples) {
           const filename = samplePath(samplesRoot, sample.url);
-          if (!await sampleInstalled(filename, sample)) await downloader(sample, filename);
+          if (await sampleInstalled(filename, sample)) continue;
+          if (!sample.downloadUrl) throw new Error(`个人音色「${instrument.name}」缺少本地文件 ${sample.url}，请重新生成`);
+          await downloader(sample, filename);
         }
       })();
       downloads.set(instrument.id, task);
@@ -213,6 +223,7 @@ export async function createApp({ root, dataDir = path.join(root, 'data'), downl
       return res.json(request);
     });
   });
+  mountVoiceKit(app, root);
   app.use('/api', (_req, res) => res.status(404).json({ error: '接口不存在' }));
   app.use('/samples', express.static(samplesRoot, { dotfiles: 'deny', fallthrough: false, immutable: true, maxAge: '1y' }));
   let vite;

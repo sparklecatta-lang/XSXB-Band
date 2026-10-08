@@ -10,3 +10,8 @@ exports/
 
 # Local skill install marker
 skills/*/studio-path.txt
+
+# Voice kit: generated guide tracks and your own recordings stay local
+voice-kit/guide/
+voice-kit/recordings/
+voice-kit/report.json

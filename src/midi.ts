@@ -89,6 +89,8 @@ export function exportMidi(project: Project, library: Instrument[]): Blob {
   // Drum articulations that are separate GM drum keys.
   const articulationPitches: Record<string, number> = {
     open: 46, 'open-short': 46, rimshot: 40, crossstick: 37, rim: 37, cowbell: 56, clave: 75, maracas: 70,
+    // Beatbox voices its kit as articulations of one instrument.
+    kick: 36, snare: 38, ksnare: 40, hihat: 42, clap: 39, breath: 82,
   };
   for (const track of audible) {
     const instrument = instruments.get(track.instrumentId);

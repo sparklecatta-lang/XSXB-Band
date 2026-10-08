@@ -28,7 +28,8 @@ export interface Track {
 export interface InstrumentSample {
   midi: number;
   url: string;
-  downloadUrl: string;
+  /** Absent for personal instruments that only exist on this machine. */
+  downloadUrl?: string;
   sha256?: string;
   bytes?: number;
   articulation?: string;
@@ -40,6 +41,11 @@ export interface InstrumentSample {
   tuneCents?: number;
   velocityTracking?: boolean;
   velocityReference?: number;
+  /** Sustain loop in source seconds; lets a short recorded vowel hold for any note length. */
+  loopStart?: number;
+  loopEnd?: number;
+  /** Source tempo of a chop; with `Instrument.stretch` it is time-stretched to the song tempo. */
+  bpm?: number;
 }
 export interface Project {
   schemaVersion: 1;
@@ -69,11 +75,17 @@ export interface Instrument {
   color?: string;
   icon?: string;
   samples: InstrumentSample[];
-  articulations?: { id: string; name: string }[];
+  /** `release` caps the note release for this articulation (short sounds stop with the note); `attack` overrides the fade-in; `legato` joins touching notes;
+   *  `glide` (seconds, with `legato`) slides a joined note in from the previous pitch (portamento). */
+  articulations?: { id: string; name: string; release?: number; attack?: number; legato?: boolean; glide?: number }[];
   defaultArticulation?: string;
   percussive?: boolean;
   gmProgram?: number;
   attack?: number;
   release?: number;
+  /** Local-only instrument from data/user-instruments (e.g. your own voice); never downloaded or published. */
+  personal?: boolean;
+  /** Chop crates: samples carrying `bpm` follow the project tempo (time-stretched, pitch kept). */
+  stretch?: boolean;
 }
 export interface ServerState { revision: number; project: Project }

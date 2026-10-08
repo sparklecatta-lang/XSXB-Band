@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>人声采样录音</title>
+<style>
+:root { --bg:#101114; --panel:#1A1C21; --line:#2A2D35; --ink:#F2EFE6; --dim:#8A8D95; --blue:#3D6BFF; --go:#9BE15D; --warn:#FFB547; --stop:#FF5A5A; }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 "Microsoft YaHei","PingFang SC",sans-serif; }
+header { display:flex; align-items:center; gap:16px; padding:12px 20px; background:var(--panel); border-bottom:1px solid var(--line); flex-wrap:wrap }
+header h1 { font-size:18px; margin:0 12px 0 0 }
+header label { color:var(--dim); font-size:14px; display:flex; align-items:center; gap:6px }
+select { background:#24272E; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:4px 6px; max-width:260px }
+.meter { width:160px; height:10px; background:#24272E; border-radius:5px; overflow:hidden }
+.meter i { display:block; height:100%; width:0; background:var(--go) }
+#total { margin-left:auto; color:var(--dim); font-variant-numeric:tabular-nums }
+.wrap { display:grid; grid-template-columns:230px 1fr; min-height:calc(100vh - 57px) }
+aside { background:var(--panel); padding:14px 10px; display:flex; flex-direction:column; gap:4px }
+aside button { all:unset; cursor:pointer; padding:9px 12px; border-radius:8px; color:var(--dim); display:flex; justify-content:space-between; gap:8px }
+aside button:hover { background:#24272E; color:var(--ink) }
+aside button.on { background:var(--blue); color:#fff }
+aside button small { opacity:.8; font-variant-numeric:tabular-nums }
+aside p { color:var(--dim); font-size:13px; margin:auto 6px 4px }
+main { display:flex; flex-direction:column; align-items:center; padding:28px 24px; gap:16px; text-align:center }
+#phase { font-size:30px; font-weight:800; letter-spacing:3px; padding:4px 26px; border-radius:999px; background:#24272E; min-width:180px }
+#label { font-size:clamp(48px,7.5vw,104px); font-weight:900; line-height:1.1 }
+#how { color:var(--dim); font-size:19px; max-width:760px; min-height:28px }
+#clock { font-size:44px; font-weight:800; font-variant-numeric:tabular-nums; min-height:60px }
+.bar { position:relative; width:min(760px,92%); height:18px; border-radius:9px; background:#24272E; overflow:hidden }
+.bar #fill { position:absolute; inset:0 auto 0 0; width:0; background:var(--go) }
+.bar #extra { position:absolute; top:0; bottom:0; background:repeating-linear-gradient(45deg,#3a3d45 0 6px,#2d3038 6px 12px) }
+.bar .hit { position:absolute; top:3px; width:12px; height:12px; margin-left:-6px; border-radius:50%; background:var(--warn) }
+.ctl { display:flex; gap:12px; flex-wrap:wrap; justify-content:center }
+.ctl button { font:inherit; font-size:18px; padding:10px 22px; border-radius:10px; border:0; background:#2A2D35; color:var(--ink); cursor:pointer }
+.ctl button:disabled { opacity:.4; cursor:default }
+.ctl #rec { background:var(--stop); color:#fff; font-weight:800; padding:10px 34px }
+.ctl #rec.busy { background:#5a2a2a }
+#take { color:var(--dim); min-height:26px }
+#take.bad { color:var(--warn) }
+.chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; max-width:820px; margin-top:6px }
+.chips button { font:inherit; font-size:14px; padding:6px 12px; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--dim); cursor:pointer }
+.chips button.done { border-color:#3f6b2a; color:var(--go) }
+.chips button.cur { background:#2A2D35; color:var(--ink); border-color:var(--ink) }
+.keys { color:var(--dim); font-size:13px }
+#banner { display:none; background:#5a2a2a; padding:12px 20px }
+body.listen #phase { background:var(--blue) } body.ready #phase { background:var(--warn); color:#111 }
+body.sing #phase { background:var(--go); color:#111 } body.tail #phase { background:#3a3d45 }
+</style></head>
+<body>
+<div id="banner">请先双击小宝乐队的 <b>start.bat</b> 启动工作室，然后用浏览器打开 <b>http://127.0.0.1:4318/voice-kit/</b>，这样录音才能保存。</div>
+<header>
+  <h1>人声采样录音</h1>
+  <label>麦克风 <select id="mic"><option>点“录音”后授权</option></select></label>
+  <div class="meter" title="输入音量"><i id="lvl"></i></div>
+  <label><input type="checkbox" id="optRef" checked> 录音前放参考音</label>
+  <label><input type="checkbox" id="optNext" checked> 录完自动下一个</label>
+  <span id="total"></span>
+</header>
+<div class="wrap">
+  <aside><div id="list"></div><p>戴耳机录。<br>空格 录音 · L 听音<br>P 回放 · ← → 换音<br>Esc 取消<br><br>唱不舒服的音直接跳过（按 →）。</p></aside>
+  <main>
+    <div id="phase">准备</div>
+    <div id="label"></div>
+    <div id="how"></div>
+    <div id="clock"></div>
+    <div class="bar"><div id="fill"></div><div id="extra"></div><div id="hits"></div></div>
+    <div class="ctl">
+      <button id="listen">🔊 听音</button>
+      <button id="rec">⏺ 录音</button>
+      <button id="play">▶ 回放</button>
+      <button id="next">下一个 →</button>
+    </div>
+    <div id="take"></div>
+    <div class="chips" id="chips"></div>
+    <div class="keys">计时条走完就可以停，后面的灰色斜纹是多录的余量。</div>
+  </main>
+</div>
+<script src="timeline.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const PRE = 0.5, TAIL = 1.2;               // seconds kept before singing starts / recorded after the target
+if (location.protocol === 'file:') $('banner').style.display = 'block';
+const SECTIONS = TL.sections, takes = {};
+let si = 0, ii = 0, busy = null, ctx, input, worklet, analyser, meterBuf, chunks = null, lastBuffer = null;
+const sec = () => SECTIONS[si], item = () => sec().items[ii];
+const rel = (it) => ({ win: it.end - it.sing, hits: it.hits.map(h => +(h - it.sing).toFixed(3)) });
+
+function renderList() {
+  $('list').innerHTML = '';
+  SECTIONS.forEach((s, k) => {
+    const b = document.createElement('button'); const n = s.items.filter(i => takes[i.id]).length;
+    b.innerHTML = `<span>${s.id} ${s.name}</span><small>${n}/${s.items.length}</small>`; b.className = k === si ? 'on' : '';
+    b.onclick = () => { if (!busy) { si = k; ii = 0; show(); } }; $('list').appendChild(b);
+  });
+  const all = SECTIONS.flatMap(s => s.items), must = SECTIONS.filter(s => !s.optional).flatMap(s => s.items);
+  $('total').textContent = `必录 ${must.filter(i => takes[i.id]).length}/${must.length} · 全部 ${all.filter(i => takes[i.id]).length}/${all.length}`;
+}
+function renderChips() {
+  $('chips').innerHTML = '';
+  sec().items.forEach((it, k) => {
+    const b = document.createElement('button'); b.textContent = it.note || it.label.split(' · ')[0];
+    b.className = (takes[it.id] ? 'done ' : '') + (k === ii ? 'cur' : ''); b.onclick = () => { if (!busy) { ii = k; show(); } }; $('chips').appendChild(b);
+  });
+}
+function setPhase(text, cls) { $('phase').textContent = text; document.body.className = cls || ''; }
+function drawBar(it) {
+  const { win, hits } = rel(it), total = win + TAIL;
+  $('extra').style.left = `${win / total * 100}%`; $('extra').style.width = `${TAIL / total * 100}%`;
+  $('hits').innerHTML = sec().kind === 'sustain' ? '' : hits.map(h => `<i class="hit" style="left:${h / total * 100}%"></i>`).join('');
+  $('fill').style.width = '0';
+}
+function show() {
+  const it = item();
+  $('label').textContent = it.label; $('how').textContent = it.how;
+  $('clock').textContent = sec().kind === 'sustain' ? `唱 ${rel(it).win.toFixed(0)} 秒` : `${it.hits.length} 下，跟着橙点`;
+  setPhase(takes[it.id] ? '已录 ✓' : '未录', ''); drawBar(it);
+  const t = takes[it.id]; $('take').className = t?.warn ? 'bad' : '';
+  $('take').textContent = t ? (t.warn || `已保存${t.peak !== undefined ? ` · 峰值 ${t.peak.toFixed(1)} dB` : ''}`) : '';
+  $('listen').disabled = sec().kind === 'perc'; $('play').disabled = !t;
+  renderList(); renderChips();
+}
+
+async function audio() {
+  if (ctx) return;
+  ctx = new AudioContext({ latencyHint: 'interactive' });
+  const code = `class Rec extends AudioWorkletProcessor { process(inputs) { const ch = inputs[0][0]; if (ch) this.port.postMessage({ frame: currentFrame, data: ch.slice() }); return true; } } registerProcessor('rec', Rec);`;
+  await ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([code], { type: 'application/javascript' })));
+  await openMic($('mic').value && $('mic').value !== '点“录音”后授权' ? $('mic').value : undefined);
+  const devices = (await navigator.mediaDevices.enumerateDevices()).filter(d => d.kind === 'audioinput');
+  const current = input.mediaStream.getAudioTracks()[0].getSettings().deviceId;
+  $('mic').innerHTML = devices.map(d => `<option value="${d.deviceId}" ${d.deviceId === current ? 'selected' : ''}>${d.label || '麦克风'}</option>`).join('');
+  meter();
+}
+async function openMic(deviceId) {
+  if (input) { input.mediaStream.getTracks().forEach(t => t.stop()); input.disconnect(); }
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: { deviceId: deviceId ? { exact: deviceId } : undefined, echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 } });
+  input = ctx.createMediaStreamSource(stream);
+  worklet = new AudioWorkletNode(ctx, 'rec'); analyser = ctx.createAnalyser(); analyser.fftSize = 2048; meterBuf = new Float32Array(2048);
+  input.connect(worklet); input.connect(analyser);
+  const sink = ctx.createGain(); sink.gain.value = 0; worklet.connect(sink).connect(ctx.destination);   // keeps the worklet pulled, silently
+  worklet.port.onmessage = (e) => { if (chunks) chunks.push(e.data); };
+}
+$('mic').onchange = async () => { if (ctx && !busy) await openMic($('mic').value); };
+function meter() {
+  analyser.getFloatTimeDomainData(meterBuf); let p = 0; for (const v of meterBuf) p = Math.max(p, Math.abs(v));
+  const db = 20 * Math.log10(p + 1e-9); $('lvl').style.width = `${Math.max(0, Math.min(100, (db + 60) / 60 * 100))}%`;
+  $('lvl').style.background = db > -1 ? 'var(--stop)' : db > -6 ? 'var(--warn)' : 'var(--go)';
+  requestAnimationFrame(meter);
+}
+function tone(midi, at, dur) {
+  const f = 440 * 2 ** ((midi - 69) / 12), g = ctx.createGain(); g.connect(ctx.destination);
+  g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(0.16, at + 0.03); g.gain.setValueAtTime(0.16, at + dur - 0.15); g.gain.linearRampToValueAtTime(0, at + dur);
+  const real = new Float32Array(10), imag = new Float32Array(10); for (let k = 1; k < 10; k++) imag[k] = 1 / k ** 1.3;
+  const o = ctx.createOscillator(); o.setPeriodicWave(ctx.createPeriodicWave(real, imag)); o.frequency.value = f; o.connect(g); o.start(at); o.stop(at + dur + 0.05);
+}
+function click(at, freq = 1600, amp = 0.3, dur = 0.03) {
+  const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = freq; o.connect(g).connect(ctx.destination);
+  g.gain.setValueAtTime(amp, at); g.gain.exponentialRampToValueAtTime(0.001, at + dur); o.start(at); o.stop(at + dur + 0.01);
+}
+async function listen() { if (busy || sec().kind === 'perc') return; await audio(); tone(item().midi, ctx.currentTime + 0.05, 1.2); }
+
+async function record() {
+  if (busy) return;
+  try { await audio(); } catch (e) { $('take').className = 'bad'; $('take').textContent = '没拿到麦克风：' + e.message; return; }
+  await ctx.resume();
+  const it = item(), s = sec(), { win, hits } = rel(it), ref = $('optRef').checked && s.kind !== 'perc';
+  const t0 = ctx.currentTime + 0.15, count = t0 + (ref ? 1.3 : 0), sing = count + 1.0, stopAt = sing + win + TAIL;
+  if (ref) tone(it.midi, t0, 1.1);
+  click(count); click(count + 0.5);
+  if (s.kind !== 'sustain') hits.forEach(h => click(sing + h, 2200, 0.08, 0.02));
+  click(sing + win, 700, 0.15, 0.05);
+  chunks = []; busy = { it, sing, win, hits, stopAt, cancelled: false };
+  $('rec').classList.add('busy'); $('rec').textContent = '■ 取消';
+  const sr = ctx.sampleRate;
+  await new Promise(done => {
+    const frame = () => {
+      if (busy.cancelled) return done();
+      const t = ctx.currentTime;
+      if (t < count) { setPhase('听音', 'listen'); $('clock').textContent = ref ? '记住这个音' : ''; }
+      else if (t < sing) { setPhase('预备', 'ready'); $('clock').textContent = t < count + 0.5 ? '2' : '1'; }
+      else if (t < sing + win) {
+        const e = t - sing, onHit = hits.some(h => e >= h - 0.06 && e < h + 0.22);
+        if (s.kind === 'sustain') { setPhase('唱', 'sing'); $('clock').textContent = `${e.toFixed(1)} / ${win.toFixed(1)} 秒`; }
+        else { setPhase(onHit ? '唱！' : '等', onHit ? 'sing' : 'ready'); $('clock').textContent = `${hits.filter(h => e >= h - 0.06).length} / ${hits.length}`; }
+      } else if (t < stopAt) { setPhase('可以停了', 'tail'); $('clock').textContent = '多录一点余量…'; }
+      else return done();
+      $('fill').style.width = `${Math.min(1, Math.max(0, (t - sing) / (win + TAIL))) * 100}%`;
+      setTimeout(frame, 30);   // timers keep running when the window is covered; animation frames do not
+    };
+    frame();
+  });
+  const cancelled = busy.cancelled, got = chunks; chunks = null; busy = null;
+  $('rec').classList.remove('busy'); $('rec').textContent = '⏺ 录音';
+  if (cancelled) { show(); return; }
+  // keep [sing - PRE, stopAt] by worklet frame index (same clock as the scheduled clicks)
+  const a = Math.round((sing - PRE) * sr), b = Math.round(stopAt * sr), out = new Float32Array(b - a);
+  for (const { frame, data } of got) for (let k = 0; k < data.length; k++) { const i = frame + k - a; if (i >= 0 && i < out.length) out[i] = data[k]; }
+  let peak = 0; for (const v of out) peak = Math.max(peak, Math.abs(v)); const pdb = 20 * Math.log10(peak + 1e-9);
+  lastBuffer = { id: it.id, data: out, sr };
+  setPhase('保存中', '');
+  const warn = pdb > -0.5 ? '声音太大，削波了：退后一点或调小麦克风音量再录' : pdb < -32 ? '声音太小：靠近一点或调大麦克风音量再录（唱跳过的音不用管）' : '';
+  try {
+    const r = await fetch(`/api/voice-kit/takes/${it.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ wav: wavBase64(out, sr) }) });
+    if (!r.ok) throw new Error((await r.json()).error || r.status);
+    takes[it.id] = { peak: pdb, warn };
+  } catch (e) { $('take').className = 'bad'; $('take').textContent = '保存失败：' + e.message + '（工作室是否在运行？）'; setPhase('没保存', ''); return; }
+  if ($('optNext').checked && !warn) { const n = sec().items.length; if (ii < n - 1) ii++; else if (si < SECTIONS.length - 1) { si++; ii = 0; } }
+  show();
+}
+function wavBase64(f, sr) {
+  const buf = new ArrayBuffer(44 + f.length * 2), v = new DataView(buf), w = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  w(0, 'RIFF'); v.setUint32(4, 36 + f.length * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, f.length * 2, true);
+  for (let i = 0; i < f.length; i++) v.setInt16(44 + i * 2, Math.max(-1, Math.min(1, f[i])) * 32767, true);
+  let s = ''; const u = new Uint8Array(buf); for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode(...u.subarray(i, i + 0x8000)); return btoa(s);
+}
+async function play() {
+  const it = item(); if (busy || !takes[it.id]) return; await audio();
+  let buffer;
+  if (lastBuffer?.id === it.id) { buffer = ctx.createBuffer(1, lastBuffer.data.length, lastBuffer.sr); buffer.copyToChannel(lastBuffer.data, 0); }
+  else buffer = await ctx.decodeAudioData(await (await fetch(`recordings/items/${it.id}.wav?${Date.now()}`)).arrayBuffer());
+  const src = ctx.createBufferSource(); src.buffer = buffer; src.connect(ctx.destination); src.start();
+}
+function move(d) { if (busy) return; const n = sec().items.length; ii += d; if (ii >= n) { if (si < SECTIONS.length - 1) { si++; ii = 0; } else ii = n - 1; } if (ii < 0) { if (si > 0) { si--; ii = sec().items.length - 1; } else ii = 0; } show(); }
+$('rec').onclick = () => busy ? (busy.cancelled = true) : record();
+$('listen').onclick = listen; $('play').onclick = play; $('next').onclick = () => move(1);
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'SELECT') return;
+  if (e.code === 'Space') { e.preventDefault(); $('rec').click(); }
+  else if (e.code === 'Escape' && busy) busy.cancelled = true;
+  else if (e.code === 'KeyL') listen(); else if (e.code === 'KeyP') play();
+  else if (e.code === 'ArrowRight') move(1); else if (e.code === 'ArrowLeft') move(-1);
+});
+(async () => {
+  try { Object.assign(takes, Object.fromEntries(Object.entries(await (await fetch('/api/voice-kit/takes')).json()).map(([k]) => [k, {}]))); } catch {}
+  const first = SECTIONS.findIndex(s => s.items.some(i => !takes[i.id]));
+  if (first >= 0) { si = first; ii = sec().items.findIndex(i => !takes[i.id]); }
+  show();
+})();
+</script>
+</body></html>
