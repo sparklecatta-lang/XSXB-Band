@@ -9,6 +9,10 @@ import { createSongStore } from './songs.mjs';
 import { mountVoiceKit } from './voice-kit.mjs';
 
 function localRequest(req, res, next) {
+  const remote = req.socket?.remoteAddress;
+  if (!remote || !['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(remote)) {
+    return res.status(403).json({ error: '只接受本机地址访问' });
+  }
   const host = req.headers.host;
   if (!host || !/^(localhost|127\.0\.0\.1|\[::1\])(?::[0-9]{1,5})?$/.test(host)) {
     return res.status(403).json({ error: '只接受本机地址访问' });
