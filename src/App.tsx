@@ -44,6 +44,34 @@ export default function App() {
   useEffect(() => { engine.setLibrary(library); }, [engine, library]);
   useEffect(() => { engine.setMasterVolume(master); }, [engine, master]);
   const stop = useCallback((reset = false) => { ++transportGeneration.current; engine.stop(); setPlaying(false); setLoadingAudio(false); if (reset) setBeat(0); }, [engine]);
+  const wasPlayingRef = useRef(false);
+  const seekTo = useCallback(async (targetBeat: number, resume = playing) => {
+    if (!project) return;
+    const totalBeats = project.bars * 4;
+    const clamped = Math.min(Math.max(0, targetBeat), totalBeats);
+    setBeat(clamped);
+    if (resume) {
+      const generation = ++transportGeneration.current;
+      setLoadingAudio(true);
+      try {
+        await engine.play(project, {
+          fromBeat: clamped >= totalBeats ? 0 : clamped,
+          loop,
+          onBeat: setBeat,
+          onEnd: () => { setPlaying(false); setBeat(0); },
+          onError: e => setError(e.message)
+        });
+        if (generation === transportGeneration.current) setPlaying(true);
+      } catch (e) {
+        setError((e as Error).message);
+      } finally {
+        if (generation === transportGeneration.current) setLoadingAudio(false);
+      }
+    } else {
+      stop();
+      setBeat(clamped);
+    }
+  }, [project, playing, loop, engine, stop]);
   useEffect(() => {
     const timing = (p: Project) => JSON.stringify({ bpm: p.bpm, bars: p.bars, tracks: p.tracks.map(t => ({ id: t.id, instrumentId: t.instrumentId, muted: t.muted, solo: t.solo, release: t.release, articulation: t.articulation, notes: t.notes })) });
     const routing = (p: Project) => JSON.stringify(p.tracks.map(t => [t.id,t.instrumentId,t.effects?.enabled,t.effects?.cabinetId,t.effects?.ampModel]));
@@ -136,6 +164,7 @@ export default function App() {
   }
   if (!project) return <div className="loading-screen"><div className="brand-mark"><i/><i/><i/></div><h1>XSXB-Band · 小宝乐队</h1><p>{error || '正在打开你的音乐工作台…'}</p>{error && <button className="primary" onClick={() => location.reload()}>重新连接</button>}</div>;
   const totalNotes = project.tracks.reduce((s, t) => s + t.notes.length, 0), duration = project.bars * 4 * 60 / project.bpm;
+  const formatTime = (sec: number) => { const s = Math.max(0, Math.floor(sec)); return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
   return <div className="app-shell">
     <header className="app-header">
       <a className="brand" href="#" onClick={e => { e.preventDefault(); setModal('help'); }} aria-label="XSXB-Band 使用帮助"><div className="brand-mark"><i/><i/><i/></div><div><strong>小宝乐队</strong><small>XSXB-BAND</small></div></a>
@@ -147,6 +176,7 @@ export default function App() {
       <div className="transport-caption"><span className="eyebrow">LET’S MAKE SOME MUSIC</span><span>今天的灵感，有了形状。</span></div>
       <div className="transport-buttons"><button className={`play-button ${playing ? 'playing' : ''}`} aria-label={playing || loadingAudio ? '暂停' : '播放'} onClick={() => void togglePlay()}>{loadingAudio ? <LoaderCircle size={23} className="spin"/> : playing ? <Pause size={23} fill="currentColor"/> : <Play size={23} fill="currentColor"/>}</button><button className="icon-button" aria-label="停止并回到开头" onClick={() => stop(true)}><Square size={18} fill="currentColor"/></button><button className={`icon-button ${loop ? 'active' : ''}`} aria-label="循环播放" aria-pressed={loop} onClick={() => { stop(); setLoop(!loop); }}><Repeat2 size={21}/></button></div>
       <div className="position"><strong>{String(Math.floor(beat / 4) + 1).padStart(2, '0')}<b>:</b>{String(Math.floor(beat % 4) + 1).padStart(2, '0')}<small>:{String(Math.floor((beat % 1) * 100)).padStart(2, '0')}</small></strong><span>小节 / 拍</span></div>
+      <div className="transport-field timeline-field"><label htmlFor="timeline-scrubber">播放进度</label><div className="timeline-control"><input id="timeline-scrubber" aria-label="播放进度" type="range" min={0} max={project.bars * 4} step={.25} value={beat} onPointerDown={() => { wasPlayingRef.current = playing; if (playing) stop(); }} onChange={e => setBeat(+e.target.value)} onPointerUp={e => void seekTo(+e.currentTarget.value, wasPlayingRef.current)}/><span className="timeline-time">{formatTime(beat * 60 / project.bpm)}<b>/</b>{formatTime(duration)}</span></div></div>
       <div className="transport-field"><label htmlFor="bpm">速度 BPM</label><div><input id="bpm" aria-label="速度 BPM" type="number" min={40} max={240} value={project.bpm} onChange={e => { const bpm = +e.target.value; if (bpm >= 40 && bpm <= 240) change({ ...project, bpm }); }}/><AudioLines size={16}/></div></div>
       <div className="transport-field key-field"><label htmlFor="project-key">调性标记</label><select id="project-key" value={project.key} onChange={e => change({ ...project, key: e.target.value })}>{Array.from(new Set([project.key, 'C major', 'A minor', 'D major', 'D minor', 'E minor', 'F major', 'G major', 'B♭ major'])).map(k => <option key={k}>{k}</option>)}</select></div>
       <div className="transport-field meter"><label>拍号</label><strong>4 <span>/</span> 4</strong></div>
@@ -163,14 +193,14 @@ export default function App() {
       </aside>
       <div className="editor-main">
         <section className="arrangement"><header className="section-header"><div className="section-name"><span>01</span><h2>编曲全景</h2><small>{project.bars} 小节 · {Math.round(duration)} 秒</small></div><div className="section-actions"><label>长度 <select aria-label="工程小节数" value={project.bars} onChange={e => { const bars = +e.target.value; if (project.tracks.some(t => t.notes.some(n => n.start + n.duration > bars * 4))) { notify('缩短前，请先移走或删除超出范围的音符'); return; } change({ ...project, bars }); }}>{Array.from(new Set([project.bars, 4, 8, 16, 32, 64])).sort((a, b) => a - b).map(b => <option key={b} value={b}>{b} 小节</option>)}</select></label><button className="icon-button" aria-label="显示音轨参数" onClick={() => setSidebar(!sidebar)}><SlidersHorizontal size={17}/></button></div></header>
-          <div className="arrangement-body"><div className="arrange-ruler"><span className="arrange-label">TRACK / BAR</span><div>{Array.from({ length: project.bars }, (_, i) => <button key={i} onClick={() => { stop(); setBeat(i * 4); }}>{String(i + 1).padStart(2, '0')}</button>)}</div></div>
+          <div className="arrangement-body"><div className="arrange-ruler"><span className="arrange-label">TRACK / BAR</span><div>{Array.from({ length: project.bars }, (_, i) => <button key={i} onClick={() => void seekTo(i * 4)}>{String(i + 1).padStart(2, '0')}</button>)}</div></div>
             <div className="arrange-tracks">{project.tracks.map((t, index) => <div className={`arrange-row ${activeTrack?.id === t.id ? 'active' : ''}`} key={t.id}><button className="arrange-label" onClick={() => selectTrack(t.id)}><span style={{ background: t.color }}/>{String(index + 1).padStart(2, '0')}<InstrumentIcon id={t.instrumentId} size={15}/></button><button className={`arrange-clip ${t.muted ? 'muted' : ''}`} style={{ '--track-color': t.color, backgroundSize: `${100 / project.bars}% 100%` } as React.CSSProperties} onClick={() => selectTrack(t.id)} aria-label={`编辑 ${t.name}`}><span className="clip-title">{t.name}</span>{t.notes.map(n => <i key={n.id} style={{ left: `${n.start / (project.bars * 4) * 100}%`, width: `${Math.max(.22, n.duration / (project.bars * 4) * 100)}%`, top: 17 + ((84 - n.midi) % 24) * .65 }}/>) }<div className="arrange-playhead" style={{ left: `${beat / (project.bars * 4) * 100}%` }}/></button></div>)}</div>
           </div>
           <div className="arrangement-caption"><span><i/>每一个小块，都是一个想法。</span><span>{totalNotes} NOTES / {project.tracks.length} TRACKS</span></div>
         </section>
         <section className="piano-section"><header className="section-header"><div className="section-name"><span>02</span><h2>钢琴卷帘</h2>{activeTrack && <small className="track-chip" style={{ color: activeTrack.color }}>{activeTrack.name}</small>}</div><div className="section-actions"><button className="icon-button" aria-label="撤销" disabled={!studio.historyCount[0]} onClick={studio.undo}><Undo2 size={16}/></button><button className="icon-button" aria-label="重做" disabled={!studio.historyCount[1]} onClick={studio.redo}><Redo2 size={16}/></button><i className="divider"/><label>吸附 <select aria-label="音符吸附" value={snap} onChange={e => setSnap(+e.target.value)}><option value={.25}>1/16</option><option value={.5}>1/8</option><option value={1}>1/4</option></select></label><div className="zoom-control"><button aria-label="缩小卷帘" onClick={() => setZoom(z => Math.max(18, z - 6))}><Minus size={14}/></button><span>{Math.round(zoom / 36 * 100)}%</span><button aria-label="放大卷帘" onClick={() => setZoom(z => Math.min(90, z + 6))}><Plus size={14}/></button></div></div></header>
           <div className="editor-mode"><button aria-label="打开钢琴卷帘" className={editorMode === 'piano' ? 'active' : ''} onClick={() => setEditorMode('piano')}><Piano size={14}/>钢琴卷帘</button><button aria-label="打开鼓机" className={editorMode === 'drums' ? 'active' : ''} onClick={() => setEditorMode('drums')}><Disc3 size={14}/>16 步鼓机</button><span>{editorMode === 'drums' ? '把节奏，一格一格点亮。' : '音高在上下，时间往右走。'}</span></div>
-          {editorMode === 'drums' ? <DrumMachine project={project} activeTrackId={activeTrack?.id} library={library} beat={playing ? beat : -1} selected={selected} onChange={change} onSelect={(id, n) => { setTrackId(id); setSelected(n); }} onPreview={id => preview(60, id)}/> : activeTrack ? <PianoRoll track={activeTrack} beats={project.bars * 4} beat={beat} snap={snap} zoom={zoom} selected={selected} onSelect={setSelected} onChange={notes => updateTrack({ notes })} onPreview={m => preview(m)} onSeek={b => { stop(); setBeat(b); }}/> : <div className="empty-editor"><Music2 size={42}/><h3>第一颗音符，从这里开始。</h3><button className="primary" onClick={() => setModal('library')}>添加一件乐器</button></div>}
+          {editorMode === 'drums' ? <DrumMachine project={project} activeTrackId={activeTrack?.id} library={library} beat={playing ? beat : -1} selected={selected} onChange={change} onSelect={(id, n) => { setTrackId(id); setSelected(n); }} onPreview={id => preview(60, id)}/> : activeTrack ? <PianoRoll track={activeTrack} beats={project.bars * 4} beat={beat} snap={snap} zoom={zoom} selected={selected} onSelect={setSelected} onChange={notes => updateTrack({ notes })} onPreview={m => preview(m)} onSeek={b => void seekTo(b)}/> : <div className="empty-editor"><Music2 size={42}/><h3>第一颗音符，从这里开始。</h3><button className="primary" onClick={() => setModal('library')}>添加一件乐器</button></div>}
           <div className="editor-hints"><span><kbd>双击</kbd> 添加音符</span><span><kbd>拖动</kbd> 移动 · 拉右缘改长度</span><span><kbd>空格</kbd> 播放</span><span><kbd>Delete</kbd> 删除</span></div>
         </section>
       </div>
